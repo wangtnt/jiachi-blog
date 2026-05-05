@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算机首次开机如何跳过Microsoft 帐户登录，快速进入Windows桌面 - 嘉驰科技Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.8; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header h1 a { color: white; text-decoration: none; }
+        header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: white; }
+        .post-meta { color: #666; margin-bottom: 20px; font-size: 0.9rem; display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .post-meta .tag { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+        .post-content { background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .post-content h1 { font-size: 1.8rem; margin-bottom: 10px; color: #1a1a1a; }
+        .post-content h2 { font-size: 1.4rem; margin: 25px 0 10px; color: #1a1a1a; border-left: 3px solid #1a73e8; padding-left: 10px; }
+        .post-content h3 { font-size: 1.2rem; margin: 20px 0 8px; color: #333; }
+        .post-content p { margin-bottom: 15px; }
+        .post-content img { max-width: 100%; height: auto; border-radius: 4px; margin: 15px 0; display: block; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .post-content code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #d63384; }
+        .post-content pre { background: #282c34; color: #abb2bf; padding: 15px; border-radius: 6px; overflow-x: auto; margin: 15px 0; }
+        .post-content pre code { background: none; color: inherit; padding: 0; }
+        .post-content blockquote { border-left: 3px solid #1a73e8; padding: 10px 15px; margin: 15px 0; background: #f0f6ff; color: #555; }
+        .post-content ul, .post-content ol { padding-left: 25px; margin-bottom: 15px; }
+        .post-content li { margin-bottom: 5px; }
+        .post-content table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .post-content th, .post-content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        .post-content th { background: #f5f5f5; font-weight: 600; }
+        .post-content a { color: #1a73e8; text-decoration: none; }
+        .post-content a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.85rem; margin-top: 30px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .post-content { padding: 20px 15px; }
+            header .container { flex-direction: column; gap: 10px; }
+            header nav a { margin-left: 10px; margin-right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">嘉驰科技Blog</a></h1>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="../articles.html">文章</a>
+                <a href="../about.html">关于</a>
+                <a href="../contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <a href="../articles.html" class="back-link">← 返回文章列表</a>
+        <article class="post-content">
+            <h1>计算机首次开机如何跳过Microsoft 帐户登录，快速进入Windows桌面</h1>
+            <div class="post-meta">
+                <span>📅 2025年3月17日 11:49</span>
+                
+                <span class="tag">网络技术</span>
+            </div>
+            <p>Created at: 2025年3月17日 11:49</p>
+<p>Tags: 网络技术</p>
+<p>日期: 2025年3月17日</p>
+<p><strong>Windows 11 家庭版系统计算机首次开机时，默认必须完成网络连接才能进入到系统。您可参考<a href="https://consumer.huawei.com/cn/support/content/zh-cn15854142/?source=weknow" target="_blank">《华为 Windows 11 系统计算机首次开机如何配置》</a>完成设置，受网络环境影响，若您的计算机无法连接网络，或卡在网络连接界面、无法进入下一步时，可按如下步骤操作，强制跳过网络连接步骤。</strong></p>
+<p>**• 跳过网络连接后，请勿将超级管理员账户 Administrator 注册为本地账户，注册本地账号名称请勿使用Administrator。</p>
+<p>• 跳过网络连接后，Windows无法正常同步时间，会导致系统日志或时间戳早于当前操作的时间，非产品出厂质量问题。可参考<a href="https://consumer.huawei.com/cn/support/content/zh-cn00688370/?source=weknow" target="_blank">《Windows 计算机如何同步网络时间》</a>**</p>
+<ul>
+<li>• 跳过网络连接后，请勿将超级管理员账户 Administrator 注册为本地账户，注册本地账号名称请勿使用Administrator。</li>
+<li>• 跳过网络连接后，Windows无法正常同步时间，会导致系统日志或时间戳早于当前操作的时间，非产品出厂质量问题。可参考<a href="https://consumer.huawei.com/cn/support/content/zh-cn00688370/?source=weknow" target="_blank">《Windows 计算机如何同步网络时间》</a></li>
+</ul>
+<p><em>*</em>*</p>
+<p><strong>图文教程</strong></p>
+<p><strong>操作步骤：</strong></p>
+<p>**计算机首次开机后，进入基本设置操作界面，您可以按界面提示，进入到让我们为你连接到网络界面，按“Shift + F10”键，系统自动调出 cmd 命令框。</p>
+<p>若计算机已通过有线连接至网络，则不会弹出此界面，此时若您想跳过有线网络连接，请拔掉网线，再按照以下操作进行。在 cmd 命令框，鼠标光标在命令框点击后输入“OOBE\BypassNRO.cmd”（字母不需要区分大小写），按 Enter 键确认，计算机自动重启。重启后，计算机再次进入基本设置界面，按界面提示操作，当再次进入让我们为你连接到网络界面，将出现我没有 Internet 连接（或暂时跳过）选项，点击我没有 Internet 连接（或暂时跳过）。点击继续执行受限设置或许可协议，将进入下一个操作界面，此时，您已跳过网络连接操作，请您按界面提示完成其他配置，进入到 Windows 系统中。**</p>
+<ul>
+<li>计算机首次开机后，进入基本设置操作界面，您可以按界面提示，进入到让我们为你连接到网络界面，按“Shift + F10”键，系统自动调出 cmd 命令框。</li>
+</ul>
+<p><strong>若计算机已通过有线连接至网络，则不会弹出此界面，此时若您想跳过有线网络连接，请拔掉网线，再按照以下操作进行。</strong></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBBF_0XruGj0Gk1XsWubdFO6SNdBtuREkDjBj5am9N8rB9PZXTiXOdwfNo9h2H_fAntmwDbMX7_6NcoUu3gOb-6yxPspa_tDvLhjOPDHgTFaIGoFT7f-uNLvbjolmjx3YITVirQK2jVSgwIhCW1LjeoS3cT7q0_oLt820nVt8CZD4JSpTmBG3Ous8QhSO8JG-UPnzmNIvXYIborXfh8XLzCclOSKQzLasDEeezfNw2JMQIU0VuaitCTquiigKNGQkKU0VBGSLq2pCmFfcrSoTVUrIySWqkCtgdKvT3eO_uN_ommYw0N8nWiXs98_3W9f50MBAAA%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBBF_0XruMzoaXVVS7FJN6WLdB1kS3YEjhP8aGlK_71yMJ1ZXTgzHO4PWaYwHr9vgTwTJDvir1_DFlmKbezDm7us8X7OmuEUL64LJ3gMSpQ5U1Lxp9vQbfS7m8_rL6-05D6tBF77VoccBLZQaw0enUp0He-vPqGH4qVmrm2Cl5lC0BlvqcoSJrLaK2TCaVVzf2pdP4V014zBzfE6HOPqhRI0Z8ABk9GOTLEb3LyMq7HUFpRWuiorLK3Qe6tzU5jcSk6tqYSgliEagbg3LFeqBIrUUKAGaQl2dfx0ffQf_xXN4xIe4ltFh4L8_gFIp0BPQwEAAA%3D%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBBF_0XruGj0Gk1XsWubdFO6SNdBtuREkDjBj5am9N8rB9PZXTiXOdwfNo9h2H_fAntmwDbMX7_6NcoUu3gOb-6yxPspa_tDvLhjOPDHgTFaIGoFT7f-uNLvbjolmjx3YITVirQK2jVSgwIhCW1LjeoS3cT7q0_oLt820nVt8CZD4JSpTmBG3Ous8QhSO8JG-UPnzmNIvXYIborXfh8XLzCclOSKQzLasDEeezfNw2JMQIU0VuaitCTquiigKNGQkKU0VBGSLq2pCmFfcrSoTVUrIySWqkCtgdKvT3eO_uN_ommYw0N8nWiXs98_3W9f50MBAAA%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBBF_0XruMzoaXVVS7FJN6WLdB1kS3YEjhP8aGlK_71yMJ1ZXTgzHO4PWaYwHr9vgTwTJDvir1_DFlmKbezDm7us8X7OmuEUL64LJ3gMSpQ5U1Lxp9vQbfS7m8_rL6-05D6tBF77VoccBLZQaw0enUp0He-vPqGH4qVmrm2Cl5lC0BlvqcoSJrLaK2TCaVVzf2pdP4V014zBzfE6HOPqhRI0Z8ABk9GOTLEb3LyMq7HUFpRWuiorLK3Qe6tzU5jcSk6tqYSgliEagbg3LFeqBIrUUKAGaQl2dfx0ffQf_xXN4xIe4ltFh4L8_gFIp0BPQwEAAA%3D%3D.png" alt="" loading="lazy"></p>
+<ul>
+<li>在 cmd 命令框，鼠标光标在命令框点击后输入“OOBE\BypassNRO.cmd”（字母不需要区分大小写），按 Enter 键确认，计算机自动重启。</li>
+</ul>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy27DIBBF_4V1XDFmANNVsROUbqou0rWFDThIjhP50aqp-u_FkdXZ3dG50pn5Icvkx9P3zZNnAmRH3PVr2CJLMcTev9nLGu_nrB3qeLGdr-ljQICQIEUhnm5Dt9Hvdj4nWrWNhdwXqoWA3DeqcTJQbxHAoUeb6CbeX11Cj_qlYTa03olMAlUZhlxmijqepRIwbpVs0NXB9pNPvXb0do7X4RRXLxBUIaNIIRntyBS7wc7LuBpXUuQFaqwo4wWUlB4M7g3LD5VQUld7amQqG621KiuNpSw5Km0KY3ja6PX-T9tH9_H_onlc_EN8e9FRk98_MPNVoUMBAAA%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy27DIBBF_4V1XDFmANNVsROUbqou0rWFDThIjhP50aqp-u_FkdXZ3dG50pn5Icvkx9P3zZNnAmRH3PVr2CJLMcTev9nLGu_nrB3qeLGdr-ljQICQIEUhnm5Dt9Hvdj4nWrWNhdwXqoWA3DeqcTJQbxHAoUeb6CbeX11Cj_qlYTa03olMAlUZhlxmijqepRIwbpVs0NXB9pNPvXb0do7X4RRXLxBUIaNIIRntyBS7wc7LuBpXUuQFaqwo4wWUlB4M7g3LD5VQUld7amQqG621KiuNpSw5Km0KY3ja6PX-T9tH9_H_onlc_EN8e9FRk98_MPNVoUMBAAA%3D.png" alt="" loading="lazy"></p>
+<ul>
+<li>重启后，计算机再次进入基本设置界面，按界面提示操作，当再次进入让我们为你连接到网络界面，将出现我没有 Internet 连接（或暂时跳过）选项，点击我没有 Internet 连接（或暂时跳过）。</li>
+</ul>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBRE_0XruOjqra6q2g3ppnSRrs2VJTsCxwl-tDSl_145mM5u4Awc5ocsUxyP39dIHgmQHQmXr2GrPNc29fENz2u9nYpmqNMZu1jTe0ApYaWWBh6uQ7fR7zifMm0iWLBBKuutkEyatmk8olcRJSoqM-3T7TVk9OCePMe2iUEVGqgtRMt0YWmQhQ8auESrvQh1i_0U864ZI87pMhzT6gWKWsGpoJCNdmRK3YDzMq7G2rHKiopRnV0Yt6CAUfOyF0ZyXuaV4rI0xlAh9sC1Kyul-LMDpzW1ulzv-MQ-hY__i-ZxiXfx7aKDI79_5qaRdEMBAAA%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2Qy2rDMBRE_0XruOjqra6q2g3ppnSRrs2VJTsCxwl-tDSl_145mM5u4Awc5ocsUxyP39dIHgmQHQmXr2GrPNc29fENz2u9nYpmqNMZu1jTe0ApYaWWBh6uQ7fR7zifMm0iWLBBKuutkEyatmk8olcRJSoqM-3T7TVk9OCePMe2iUEVGqgtRMt0YWmQhQ8auESrvQh1i_0U864ZI87pMhzT6gWKWsGpoJCNdmRK3YDzMq7G2rHKiopRnV0Yt6CAUfOyF0ZyXuaV4rI0xlAh9sC1Kyul-LMDpzW1ulzv-MQ-hY__i-ZxiXfx7aKDI79_5qaRdEMBAAA%3D.png" alt="" loading="lazy"></p>
+<ul>
+<li>点击继续执行受限设置或许可协议，将进入下一个操作界面，此时，您已跳过网络连接操作，请您按界面提示完成其他配置，进入到 Windows 系统中。</li>
+</ul>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2QS0_DMBCE_4vPDVrX6xcn8lS5IA7lXG1iJ7WUplUeIIr47zhVxN5mNaP5ND9smfx4_L559sw42zF3_Ro2KaJsQ-_f6LLK-zlphlO4UOdP8DiuuJJca26ebkO3ud9pPke3Qelq61Fy47FxkpQiJEOtBe9Us1bV4f7qovWQvtSC2ib-E83BJtjudWLByaR2mgtJVtfoTi31k4-5ZvQ0h-twDCsXV2BRAAKPRDs2hW6geRlXYm1zbWS5LzHLKpED7MGmBitjtChTLIpCWExzEKIsFRYIVZZXFqWylZSQFbHrk_rgPv4nmsfFP8C3iQ4p-_0DLg43qEMBAAA%3D.png" alt="" loading="lazy"></p>
+<p><img src="https://consumer-tkbdownload.huawei.com/ctkbfm/servlet/download/downloadServlet/H4sIAAAAAAAAAD2QS0_DMBCE_4vPDVrX6xcn8lS5IA7lXG1iJ7WUplUeIIr47zhVxN5mNaP5ND9smfx4_L559sw42zF3_Ro2KaJsQ-_f6LLK-zlphlO4UOdP8DiuuJJca26ebkO3ud9pPke3Qelq61Fy47FxkpQiJEOtBe9Us1bV4f7qovWQvtSC2ib-E83BJtjudWLByaR2mgtJVtfoTi31k4-5ZvQ0h-twDCsXV2BRAAKPRDs2hW6geRlXYm1zbWS5LzHLKpED7MGmBitjtChTLIpCWExzEKIsFRYIVZZXFqWylZSQFbHrk_rgPv4nmsfFP8C3iQ4p-_0DLg43qEMBAAA%3D.png" alt="" loading="lazy"></p>
+<p><strong>如果以上方法未能解决问题，为了尽快解决您的问题，请您尽快联系微软客服400-820-3800(手机或固话)、或800-820-3800(固话)按语音提示获取更多的咨询与帮助。或者您也可以通过登录<a href="https://www.microsoft.com/zh-cn/" target="_blank">微软中国官网</a>，点击网页最下方的联络 Microsoft，按网页提示进行在线咨询。</strong></p>
+        </article>
+        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+    </div>
+</body>
+</html>

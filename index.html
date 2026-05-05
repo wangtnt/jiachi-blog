@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>嘉驰科技Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.8; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
+        header nav a:hover { color: white; }
+        .hero { background: linear-gradient(135deg, #1a73e8 0%, #0d47a1 100%); color: white; padding: 60px 0; text-align: center; }
+        .hero h2 { font-size: 2rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.1rem; opacity: 0.9; }
+        .section-title { font-size: 1.3rem; margin: 30px 0 15px; color: #1a1a1a; border-left: 3px solid #1a73e8; padding-left: 10px; }
+        .article-list { list-style: none; }
+        .article-list li { background: white; padding: 15px 20px; margin-bottom: 10px; border-radius: 6px; box-shadow: 0 1px 2px rgba(0,0,0,0.06); transition: box-shadow 0.2s; }
+        .article-list li:hover { box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        .article-list a { color: #1a1a1a; text-decoration: none; font-size: 1.05rem; font-weight: 500; }
+        .article-list a:hover { color: #1a73e8; }
+        .article-meta { color: #888; font-size: 0.85rem; margin-top: 4px; }
+        .tag { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; margin-right: 5px; }
+        .view-all { display: inline-block; margin-top: 15px; color: #1a73e8; text-decoration: none; font-size: 0.95rem; }
+        .view-all:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.85rem; margin-top: 30px; }
+        @media (max-width: 600px) {
+            .hero { padding: 40px 0; }
+            .hero h2 { font-size: 1.5rem; }
+            header .container { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>嘉驰科技Blog</h1>
+            <nav>
+                <a href="index.html">首页</a>
+                <a href="articles.html">文章</a>
+                <a href="about.html">关于</a>
+                <a href="contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="container">
+            <h2>嘉驰科技Blog</h2>
+            <p>网络技术 · 监控安防 · 实用经验分享</p>
+        </div>
+    </div>
+    <div class="container">
+        <h3 class="section-title">最新文章</h3>
+        <ul class="article-list">
+            <li>
+                <a href="posts/海康威视断尾线摄像机尾线转RJ45线序.html">海康威视断尾线摄像机尾线转RJ45线序</a>
+                <div class="article-meta">📅 2026年3月3日 14:13 <span class="tag">监控器材管理工具软件</span></div>
+            </li>
+            <li>
+                <a href="posts/海康DS-2XD2325E-IWT-设置方法.html">海康DS-2XD2325E-IWT 设置方法</a>
+                <div class="article-meta">📅 2025年9月25日 11:50 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/萤石云同时分享多个设备给一个好友.html">萤石云同时分享多个设备给一个好友</a>
+                <div class="article-meta">📅 2025年8月23日 14:32 <span class="tag">监控器材管理工具软件</span></div>
+            </li>
+            <li>
+                <a href="posts/全网最全WIN11和WIN10激活码.html">全网最全WIN11和WIN10激活码</a>
+                <div class="article-meta">📅 2025年7月27日 15:30 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/Win10、Win11，跳过联网使用本地账户的3种方法.html">Win10、Win11，跳过联网使用本地账户的3种方法</a>
+                <div class="article-meta">📅 2025年7月26日 11:08 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/联想笔记本u盘启动bios设置方法、教程步骤.html">联想笔记本u盘启动bios设置方法、教程步骤</a>
+                <div class="article-meta">📅 2025年7月24日 17:17 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/GROK提供的节点，可以实现很多可能.html">GROK提供的节点，可以实现很多可能</a>
+                <div class="article-meta">📅 2025年6月27日 10:30 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/关于华硕系列智能主板的安装注意事项.html">关于华硕系列智能主板的安装注意事项</a>
+                <div class="article-meta">📅 2025年6月27日 08:49 <span class="tag">网络技术</span></div>
+            </li>
+            <li>
+                <a href="posts/宏电4G路由器H8951说明书.html">宏电4G路由器H8951说明书</a>
+                <div class="article-meta">📅 2025年6月20日 11:40 <span class="tag">说明书</span></div>
+            </li>
+            <li>
+                <a href="posts/沈阳理工大学机房戴尔硬盘保护套件设置.html">沈阳理工大学机房戴尔硬盘保护套件设置</a>
+                <div class="article-meta">📅 2025年4月18日 14:19 <span class="tag">网络技术</span></div>
+            </li>
+        </ul>
+        <a href="articles.html" class="view-all">查看全部文章 →</a>
+        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+    </div>
+</body>
+</html>

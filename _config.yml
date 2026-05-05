@@ -1,0 +1,24 @@
+title: 嘉驰科技Blog
+description: 网络技术·监控器材·说明书分享平台
+url: https://wangtnt.github.io
+author: 嘉驰科技
+email: contact@jiachi.com
+lang: zh-CN
+timezone: Asia/Shanghai
+
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+collections:
+  posts:
+    permalink: /posts/:title/
+
+defaults:
+  - scope:
+      path: "_posts"
+    values:
+      layout: post

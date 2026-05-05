@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} - {% endif %}嘉驰科技Blog</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    a { color: #1a73e8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: #1a73e8;
+      color: #fff;
+      padding: 0 20px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 60px;
+    }
+    .site-title {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+    .site-title:hover { text-decoration: none; }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+    }
+    nav ul li a {
+      color: rgba(255,255,255,0.85);
+      padding: 6px 14px;
+      border-radius: 4px;
+      font-size: 15px;
+      transition: background 0.2s, color 0.2s;
+    }
+    nav ul li a:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      text-decoration: none;
+    }
+    nav ul li a.active {
+      background: rgba(255,255,255,0.25);
+      color: #fff;
+      font-weight: 500;
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .hamburger span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background: #fff;
+      margin: 4px 0;
+      border-radius: 2px;
+    }
+    main { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+    footer {
+      background: #1a1a2e;
+      color: #9aa;
+      text-align: center;
+      padding: 24px 20px;
+      font-size: 14px;
+      margin-top: 60px;
+    }
+    footer a { color: #8ab4f8; }
+    @media (max-width: 600px) {
+      .header-inner { flex-wrap: wrap; height: auto; padding: 10px 0; }
+      .site-title { font-size: 18px; }
+      .hamburger { display: block; }
+      nav { width: 100%; display: none; }
+      nav.open { display: block; }
+      nav ul { flex-direction: column; padding: 10px 0; }
+      nav ul li a { display: block; padding: 10px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="{{ site.baseurl }}/" class="site-title">嘉驰科技Blog</a>
+      <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+      <nav>
+        <ul>
+          <li><a href="{{ site.baseurl }}/">首页</a></li>
+          <li><a href="{{ site.baseurl }}/articles.html">文章列表</a></li>
+          <li><a href="{{ site.baseurl }}/about.html">关于我们</a></li>
+          <li><a href="{{ site.baseurl }}/contact.html">联系我们</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    {{ content }}
+  </main>
+  <footer>
+    <p>&copy; {{ site.time | date: "%Y" }} 嘉驰科技 · 网络技术·监控器材·说明书分享平台</p>
+    <p>Hosted on <a href="https://wangtnt.github.io/jiachi-tech-blog/" target="_blank">GitHub Pages</a></p>
+  </footer>
+</body>
+</html>
