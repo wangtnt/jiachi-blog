@@ -261,8 +261,13 @@ def md_to_html(md_text, article_dir_name):
 
     result = '\n'.join(html_lines)
 
-    # Fix image paths - convert Notion relative paths to our structure
-    def fix_img_path(match):
+    return result
+
+
+def inline_md(text):
+    """Convert inline markdown (bold, italic, code, links, images) to HTML."""
+    # Images: ![alt](url) - must be processed BEFORE links
+    def img_replacer(match):
         alt = match.group(1)
         path = match.group(2)
         # Already absolute URL
@@ -271,41 +276,18 @@ def md_to_html(md_text, article_dir_name):
         # URL-decode the path
         decoded = unquote(path)
         # Extract the directory name (article folder name)
-        # Path format: ArticleName/image.png
         parts = decoded.split('/')
         if len(parts) >= 2:
             img_name = parts[-1]
             folder = '/'.join(parts[:-1])
             new_path = f'../images/{folder}/{img_name}'
         else:
-            new_path = decoded
+            new_path = f'../images/{decoded}'
         return f'<img src="{new_path}" alt="{alt}" loading="lazy">'
-
-    result = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', fix_img_path, result)
-
-    # Also handle standalone <img> tags if any
-    def fix_img_tag(match):
-        src = match.group(1)
-        if src.startswith('http'):
-            return match.group(0)
-        decoded = unquote(src)
-        parts = decoded.split('/')
-        if len(parts) >= 2:
-            img_name = parts[-1]
-            folder = '/'.join(parts[:-1])
-            new_src = f'../images/{folder}/{img_name}'
-            return f'src="{new_src}"'
-        return match.group(0)
-
-    result = re.sub(r'src="([^"]+)"', fix_img_tag, result)
-
-    return result
-
-
-def inline_md(text):
-    """Convert inline markdown (bold, italic, code, links) to HTML."""
-    # Links: [text](url)
-    text = re.sub(r'\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank">\1</a>', text)
+    
+    text = re.sub(r'!\[([^\]]*)\]\(([^)]+)\)', img_replacer, text)
+    # Links: [text](url) - but not images (already processed above)
+    text = re.sub(r'(?<!!)\[([^\]]+)\]\(([^)]+)\)', r'<a href="\2" target="_blank">\1</a>', text)
     # Bold: **text**
     text = re.sub(r'\*\*(.+?)\*\*', r'<strong>\1</strong>', text)
     # Italic: *text*
