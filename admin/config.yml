@@ -1,0 +1,43 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: editorial_workflow
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "posts"
+    label: "文章"
+    folder: "posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "标题", name: "title", widget: "string"}
+      - {label: "发布日期", name: "date", widget: "datetime"}
+      - {label: "标签", name: "tags", widget: "list", default: []}
+      - {label: "置顶", name: "pinned", widget: "boolean", default: false}
+      - {label: "正文", name: "body", widget: "markdown"}
+
+  - name: "pages"
+    label: "页面"
+    files:
+      - file: "index.html"
+        label: "首页"
+        name: "index"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "正文", name: "body", widget: "markdown"}
+      - file: "about.html"
+        label: "关于我们"
+        name: "about"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "正文", name: "body", widget: "markdown"}
+      - file: "contact.html"
+        label: "联系我们"
+        name: "contact"
+        fields:
+          - {label: "标题", name: "title", widget: "string"}
+          - {label: "正文", name: "body", widget: "markdown"}
