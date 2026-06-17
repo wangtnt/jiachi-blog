@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>武汉恩施重庆旅游简明行程规划 - 嘉驰科技Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.8; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header h1 a { color: white; text-decoration: none; }
+        header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: white; }
+        .post-meta { color: #666; margin-bottom: 20px; font-size: 0.9rem; display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .post-meta .tag { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+        .post-content { background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .post-content h1 { font-size: 1.8rem; margin-bottom: 10px; color: #1a1a1a; }
+        .post-content h2 { font-size: 1.4rem; margin: 25px 0 10px; color: #1a1a1a; border-left: 3px solid #1a73e8; padding-left: 10px; }
+        .post-content h3 { font-size: 1.2rem; margin: 20px 0 8px; color: #333; }
+        .post-content p { margin-bottom: 15px; }
+        .post-content blockquote { border-left: 3px solid #1a73e8; padding: 10px 15px; margin: 15px 0; background: #f0f6ff; color: #555; }
+        .post-content ul, .post-content ol { padding-left: 25px; margin-bottom: 15px; }
+        .post-content li { margin-bottom: 5px; }
+        .post-content table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .post-content th, .post-content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        .post-content th { background: #f5f5f5; font-weight: 600; }
+        .post-content a { color: #1a73e8; text-decoration: none; }
+        .post-content a:hover { text-decoration: underline; }
+        .day-box { background: #f0f7fb; border-radius: 8px; padding: 18px 22px; margin: 15px 0; border-left: 5px solid #2e86c1; }
+        .day-box h3 { color: #1a5276; margin-top: 0; }
+        .tag-info { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin: 2px 3px; background: #d1ecf1; color: #0c5460; }
+        .tag-warning { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin: 2px 3px; background: #fff3cd; color: #856404; }
+        .tag-success { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin: 2px 3px; background: #d4edda; color: #155724; }
+        .tag-danger { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; margin: 2px 3px; background: #f8d7da; color: #721c24; }
+        .note { background: #fffbf0; border: 1px solid #f0e6c0; border-radius: 6px; padding: 15px; margin: 15px 0; font-size: 14px; }
+        .hotel-card { background: #fff; border: 1px solid #e0e0e0; border-radius: 8px; padding: 15px 20px; margin: 10px 0; }
+        .hotel-card .name { font-weight: bold; font-size: 16px; color: #1a5276; }
+        .hotel-card .price { color: #e74c3c; font-size: 16px; float: right; }
+        .hotel-card .area { color: #666; font-size: 13px; margin-top: 5px; }
+        .weather-card { display: inline-block; background: #fff; border-radius: 8px; padding: 12px 18px; margin: 5px; box-shadow: 0 1px 4px rgba(0,0,0,.08); text-align: center; }
+        .weather-card .city { font-weight: bold; color: #1a5276; }
+        .weather-card .temp { font-size: 20px; color: #e74c3c; margin: 5px 0; }
+        .weather-card .desc { font-size: 13px; color: #666; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.85rem; margin-top: 30px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        .full-plan-btn { display: inline-block; background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 12px 28px; border-radius: 24px; text-decoration: none; font-weight: 600; margin: 15px 0; transition: all 0.3s; }
+        .full-plan-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(26,115,232,0.4); }
+        @media (max-width: 600px) {
+            .post-content { padding: 20px 15px; }
+            header .container { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">嘉驰科技Blog</a></h1>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="../articles.html">文章</a>
+                <a href="../about.html">关于</a>
+                <a href="../contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <a href="../articles.html" class="back-link">← 返回文章列表</a>
+        <article class="post-content">
+            <h1>武汉恩施重庆旅游简明行程规划</h1>
+            <div class="post-meta">
+                <span>📅 2026年6月17日</span>
+                <span class="tag">养宠经验</span>
+            </div>
+
+            <p>7月10日—7月18日，共9天。路线：沈阳 → 武汉 → 恩施 → 重庆 → 沈阳。总预算约 ¥5,000-8,000/人。</p>
+
+            <a href="../travel/武汉恩施重庆旅游简明行程规划.html" target="_blank" class="full-plan-btn">📄 查看完整行程规划（含地图/表格/详情）</a>
+
+            <h2>🌤️ 三城天气速览</h2>
+            <div style="display:flex; flex-wrap:wrap; gap:12px;">
+                <div class="weather-card"><div class="city">武汉</div><div class="temp">26°C~33°C</div><div class="desc">湿热，防暑</div><span class="tag-warning">🔥 闷热</span></div>
+                <div class="weather-card"><div class="city">恩施</div><div class="temp">24°C~28°C</div><div class="desc">山区凉爽</div><span class="tag-success">🌿 避暑舒适</span></div>
+                <div class="weather-card"><div class="city">重庆</div><div class="temp">27°C~33°C</div><div class="desc">高温注意</div><span class="tag-danger">🔥 火炉</span></div>
+            </div>
+
+            <h2>📅 每日行程速览</h2>
+
+            <div class="day-box">
+                <h3>DAY 1（7月10日）沈阳 → 武汉</h3>
+                <p>✈️ 沈阳 6:45 → 武汉 9:50。下午湖北省博物馆（越王勾践剑+编钟），晚上楚河汉街。住：武昌区（黄鹤楼周边）。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 2（7月11日）武汉 · 黄鹤楼夜景版 ✨</h3>
+                <p>🌅 粮道街过早 → 🌉 长江大桥 → 🏛️ 晴川阁 → 🛍️ 江汉路 → 🏯 <strong>18:30登黄鹤楼看日落+夜景</strong> → 🦞 吉庆街小龙虾。7月11日多云27-34°C，夜游条件极佳！</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 3（7月12日）武汉 → 恩施</h3>
+                <p>🚄 D5987 汉口 8:20 → 恩施 12:21。下午恩施土司城，晚上土家女儿城（歌舞表演）。住：恩施市区（5晚）。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 4（7月13日）恩施大峡谷</h3>
+                <p>🏔️ 全天：云龙地缝 + 七星寨（一炷香、绝壁栈道）。步行约15公里，穿最舒服的鞋！</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 5（7月14日）腾龙洞</h3>
+                <p>🕳️ 亚洲最大溶洞，洞内8-12°C，带外套！含激光秀+土家歌舞表演。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 6（7月15日）恩施地心谷</h3>
+                <p>💎 水上栈道+玻璃桥，比大峡谷轻松许多。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 7（7月16日）屏山峡谷</h3>
+                <p>🛶 网红"悬浮船"，水清如镜。路程较远（单程2.5-3小时），全天往返。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 8（7月17日）恩施 → 重庆</h3>
+                <p>🚄 恩施 9:02 → 重庆北 12:02。下午解放碑+八一路好吃街，傍晚长江索道，晚上洪崖洞夜景+火锅。</p>
+            </div>
+
+            <div class="day-box">
+                <h3>DAY 9（7月18日）重庆 → 沈阳</h3>
+                <p>上午磁器口古镇 或 李子坝轻轨穿楼（二选一）。✈️ 重庆 17:05 → 沈阳 21:45。行程结束！</p>
+            </div>
+
+            <h2>🏨 住宿预算</h2>
+            <table>
+                <tr><th>城市</th><th>晚数</th><th>预算/晚</th><th>小计</th></tr>
+                <tr><td>武汉</td><td>2晚</td><td>¥150-250</td><td>¥300-500</td></tr>
+                <tr><td>恩施</td><td>5晚</td><td>¥150-250</td><td>¥750-1,250</td></tr>
+                <tr><td>重庆</td><td>1晚</td><td>¥150-300</td><td>¥150-300</td></tr>
+                <tr style="font-weight:bold; background:#e8f4f8;"><td colspan="3">住宿合计（8晚）</td><td>¥1,200-2,050</td></tr>
+            </table>
+
+            <h2>💰 费用预算（每人）</h2>
+            <table>
+                <tr><th>项目</th><th>预算</th></tr>
+                <tr><td>✈️ 去程机票（沈阳→武汉）</td><td>¥600-1,200</td></tr>
+                <tr><td>🚄 武汉→恩施 动车</td><td>¥180-220</td></tr>
+                <tr><td>🚄 恩施→重庆 动车</td><td>¥110-150</td></tr>
+                <tr><td>✈️ 返程机票（重庆→沈阳）</td><td>¥700-1,300</td></tr>
+                <tr><td>🏨 住宿（8晚）</td><td>¥1,200-2,050</td></tr>
+                <tr><td>🎫 门票</td><td>¥650-850</td></tr>
+                <tr><td>🚌 短途交通</td><td>¥500-700</td></tr>
+                <tr><td>🍜 餐饮（9天）</td><td>¥900-1,500</td></tr>
+                <tr style="font-weight:bold; background:#e8f4f8;"><td>💰 总计</td><td>¥5,000-8,000</td></tr>
+            </table>
+
+            <h2>⚠️ 重要提醒</h2>
+            <div class="note">
+                <strong>1. 恩施大峡谷体力消耗大</strong>：全天2万步+，穿防滑运动鞋。<br><br>
+                <strong>2. 雨季准备</strong>：7月中旬恩施多雨，带雨衣、防水鞋套。<br><br>
+                <strong>3. 提前预约</strong>：湖北省博物馆（免费但限流）、恩施大峡谷门票。<br><br>
+                <strong>4. 防暑降温</strong>：武汉/重庆炎热，带藿香正气水、小风扇。<br><br>
+                <strong>5. 黄鹤楼夜场</strong>：7月11日多云，夜游条件极佳！提前在公众号"黄鹤楼"预约夜场票。
+            </div>
+
+            <hr style="margin:30px 0;">
+            <p>📄 <strong>完整版</strong>含详细时刻表、酒店推荐、美食地图、交通指南，<a href="../travel/武汉恩施重庆旅游简明行程规划.html" target="_blank">点击查看完整HTML规划书</a>。</p>
+
+        </article>
+        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+    </div>
+</body>
+</html>

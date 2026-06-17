@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>湖北武汉恩施旅游 · 详细行程规划</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+  line-height: 1.8;
+  color: #333;
+  background: #f5f5f5;
+  padding: 20px;
+}
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 20px rgba(0,0,0,.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.header {
+  background: linear-gradient(135deg, #1a5276, #2e86c1);
+  color: #fff;
+  padding: 40px;
+  text-align: center;
+}
+.header h1 { font-size: 28px; margin-bottom: 10px; }
+.header p { font-size: 15px; opacity: .9; }
+.section {
+  padding: 30px 40px;
+  border-bottom: 1px solid #eee;
+}
+.section:last-child { border-bottom: none; }
+h2 {
+  font-size: 22px;
+  color: #1a5276;
+  border-left: 4px solid #2e86c1;
+  padding-left: 15px;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 18px;
+  color: #2e86c1;
+  margin: 20px 0 10px;
+}
+.day-box {
+  background: #f0f7fb;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin: 15px 0;
+  border-left: 5px solid #2e86c1;
+}
+.day-box h3 {
+  color: #1a5276;
+  margin-top: 0;
+  font-size: 19px;
+}
+.day-box .time { color: #e74c3c; font-weight: bold; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 15px 0;
+  font-size: 14px;
+}
+th, td {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+th {
+  background: #2e86c1;
+  color: #fff;
+  font-weight: bold;
+}
+tr:nth-child(even) td { background: #f8f9fa; }
+.tag {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  margin: 2px 3px;
+}
+.tag-warning { background: #fff3cd; color: #856404; }
+.tag-info { background: #d1ecf1; color: #0c5460; }
+.tag-success { background: #d4edda; color: #155724; }
+.tag-danger { background: #f8d7da; color: #721c24; }
+.weather-card {
+  display: inline-block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin: 5px;
+  box-shadow: 0 1px 4px rgba(0,0,0,.08);
+  text-align: center;
+}
+.weather-card .city { font-weight: bold; color: #1a5276; }
+.weather-card .temp { font-size: 20px; color: #e74c3c; margin: 5px 0; }
+.weather-card .desc { font-size: 13px; color: #666; }
+.hotel-card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 15px 20px;
+  margin: 10px 0;
+}
+.hotel-card .name { font-weight: bold; font-size: 16px; color: #1a5276; }
+.hotel-card .price { color: #e74c3c; font-size: 16px; float: right; }
+.hotel-card .area { color: #666; font-size: 13px; margin-top: 5px; }
+.food-item { margin: 5px 0; }
+.footer {
+  background: #f8f9fa;
+  padding: 25px 40px;
+  text-align: center;
+  font-size: 13px;
+  color: #999;
+}
+.note {
+  background: #fffbf0;
+  border: 1px solid #f0e6c0;
+  border-radius: 6px;
+  padding: 15px;
+  margin: 15px 0;
+  font-size: 14px;
+}
+ul { padding-left: 20px; }
+li { margin: 5px 0; }
+@media print {
+  body { background: #fff; padding: 0; }
+  .container { box-shadow: none; border-radius: 0; }
+}
+@media (max-width: 768px) {
+  .section { padding: 20px 15px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header">
+  <h1>🏔️ 湖北武汉恩施旅游 · 详细行程规划</h1>
+  <p>7月10日 — 7月18日 ｜ 沈阳 ⇨ 武汉 ⇨ 恩施 ⇨ 重庆 ⇨ 沈阳</p>
+  <p>🌃 武汉站特色：黄鹤楼夜景版！</p>
+  <p>总预算参考：约 ¥5,000-8,000/人（含机票火车票住宿餐饮门票）</p>
+</div>
+
+<!-- ==================== 天气 ==================== -->
+<div class="section">
+  <h2>🌤️ 三城天气速览（7月中旬）</h2>
+  <div style="display:flex; flex-wrap:wrap; gap:15px;">
+    <div class="weather-card">
+      <div class="city">🏙️ 武汉</div>
+      <div class="temp">26°C ~ 33°C</div>
+      <div class="desc">湿热，偶有阵雨<br>体感温度可达38°C+</div>
+      <span class="tag tag-warning">🔥 闷热，防暑</span>
+    </div>
+    <div class="weather-card">
+      <div class="city">🏔️ 恩施</div>
+      <div class="temp">24°C ~ 28°C</div>
+      <div class="desc">山区凉爽，多雨<br>峡谷体感22°C-25°C</div>
+      <span class="tag tag-success">🌿 避暑舒适</span>
+    </div>
+    <div class="weather-card">
+      <div class="city">🌆 重庆</div>
+      <div class="temp">27°C ~ 33°C</div>
+      <div class="desc">炎热，"火炉"模式<br>傍晚较舒适</div>
+      <span class="tag tag-danger">🔥 高温注意</span>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:15px;">
+    <strong>👔 穿衣建议：</strong>
+    武汉/重庆：短袖+短裤+防晒衣+遮阳帽+墨镜。恩施：加一件薄外套（早晚凉）。全程必备：雨伞/雨衣、防滑运动鞋、防晒霜。
+  </div>
+</div>
+
+<!-- ==================== DAY 1 ==================== -->
+<div class="section">
+  <h2>📅 DAY 1 — 7月10日（周四）沈阳 → 武汉</h2>
+  <div class="day-box">
+    <h3>✈️ 沈阳 6:45 → 武汉 9:50</h3>
+    <p><strong>上午：</strong>抵达武汉天河机场，地铁2号线直达市区（约50分钟），先到酒店放行李。</p>
+    <p><strong>中午：</strong>户部巷/粮道街午餐 —— 热干面 + 三鲜豆皮 + 蛋酒。</p>
+    <p><strong>下午：</strong>湖北省博物馆（免费，需提前在公众号预约，看越王勾践剑+编钟）。之后逛东湖绿道骑行或散步（可选，天气太热可跳过）。</p>
+    <p><strong>晚上：</strong>楚河汉街晚餐，体验武汉夜景。</p>
+
+    <h3>🏨 住宿建议：武汉（住2晚）</h3>
+    <div class="hotel-card">
+      <span class="price">¥150-250/晚</span>
+      <div class="name">1. 俪居美伦酒店(首义广场店)</div>
+      <div class="area">📍 武昌区首义广场旁 · 步行10分钟到黄鹤楼 · 性价比高</div>
+    </div>
+    <div class="hotel-card">
+      <span class="price">¥200-300/晚</span>
+      <div class="name">2. 如家/汉庭(武昌火车站/黄鹤楼店)</div>
+      <div class="area">📍 连锁品质有保障 · 地铁口附近 · 交通方便</div>
+    </div>
+    <div class="hotel-card">
+      <span class="price">¥180-280/晚</span>
+      <div class="name">3. 你好公寓酒店(黄鹤楼店)</div>
+      <div class="area">📍 民主路 · 距黄鹤楼步行可达 · 公寓式可做饭</div>
+    </div>
+    <p><span class="tag tag-info">💡 建议选武昌区（黄鹤楼/户部巷周边），游玩方便。汉口那边是商业区，离景点稍远。</span></p>
+  </div>
+</div>
+
+<!-- ==================== DAY 2 ==================== -->
+<div class="section">
+  <h2>📅 DAY 2 — 7月11日（周五）武汉一日游（黄鹤楼夜景版 ✨）</h2>
+  <div class="day-box">
+    <h3>🗺️ 路线：粮道街 → 长江大桥 → 晴川阁 → 江汉路 → 🏯 黄鹤楼夜景 → 🦞 吉庆街小龙虾</h3>
+
+    <p><strong>🌅 早晨 7:00 - 粮道街"过早"</strong></p>
+    <ul>
+      <li>赵师傅油饼包烧麦（网红必打卡）</li>
+      <li>蔡林记热干面（正宗老字号）</li>
+      <li>老通城三鲜豆皮</li>
+      <li>面窝、蛋酒</li>
+    </ul>
+
+    <p><strong>🌉 上午 8:30-11:00 - 武汉长江大桥</strong></p>
+    <ul>
+      <li>从粮道街步行可到，桥上步行看江景</li>
+      <li>万里长江第一桥，感受江风拂面</li>
+      <li>桥头堡下拍照打卡，江面轮渡往来</li>
+      <li>顺便逛户部巷（就在桥头旁）</li>
+    </ul>
+
+    <p><strong>🏛️ 中午 11:30-14:00 - 晴川阁 + 午餐</strong></p>
+    <ul>
+      <li>免费！"晴川历历汉阳树"，与黄鹤楼隔江相望</li>
+      <li>铁门关也在旁边，可一起游览</li>
+      <li>午餐推荐：老宅藕香（排骨藕汤+武昌鱼），人均60-80元</li>
+    </ul>
+
+    <p><strong>🛍️ 下午 14:30-17:30 - 江汉路步行街</strong></p>
+    <ul>
+      <li>百年商业街，租界建筑群拍照超好看</li>
+      <li>江汉关博物馆（免费，16:00前入馆）</li>
+      <li>逛累了找咖啡馆歇脚，避开下午最热时段 ☕</li>
+    </ul>
+
+    <p><strong>🏯 傍晚 18:30-20:30 - 黄鹤楼夜景 ✨（核心亮点！）</strong></p>
+    <ul>
+      <li>门票：约70元/人（夜场需确认当天是否开放，夏季通常有夜游）</li>
+    </ul>
+    <p><span class="tag tag-info" style="margin-bottom:8px;display:inline-block;">🌟 夜景三大看点</span></p>
+    <ul>
+      <li>① 登楼俯瞰：武汉三镇万家灯火，长江大桥灯带如金龙横卧</li>
+      <li>② 灯光秀：黄鹤楼主楼夜间景观灯光，古建筑+现代光影交相辉映</li>
+      <li>③ 远眺长江：江面倒映两岸灯火，比白天更震撼</li>
+    </ul>
+    <ul>
+      <li>🕐 7月武汉日落约19:20，19:00后天色渐暗、灯光渐亮</li>
+      <li>建议18:30入园：先参观楼内文物 → 等待日落 → 拍摄夜景</li>
+      <li>游玩时间：2-2.5小时</li>
+    </ul>
+    <p><span class="tag tag-warning">💡 备选方案：如当天黄鹤楼无夜场（关注公众号"黄鹤楼公园"查询），改为上午登楼，傍晚在司门口天桥/长江大桥拍摄黄鹤楼外景灯光，同样出片！</span></p>
+
+    <p><strong>🦞 晚上 21:00 - 吉庆街/万松园小龙虾</strong></p>
+    <ul>
+      <li>靓靓蒸虾 / 巴厘龙虾（两大品牌）</li>
+      <li>人均100-150元，油焖+蒜蓉各来一份</li>
+      <li>搭配冰镇啤酒🍺，武汉夏夜标配</li>
+    </ul>
+
+    <h3>🍜 武汉必吃清单</h3>
+    <table>
+      <tr><th>美食</th><th>推荐店铺</th><th>人均</th></tr>
+      <tr><td>热干面</td><td>蔡林记、麦香园</td><td>¥6-10</td></tr>
+      <tr><td>三鲜豆皮</td><td>老通城</td><td>¥10-15</td></tr>
+      <tr><td>油饼包烧麦</td><td>赵师傅（粮道街）</td><td>¥12</td></tr>
+      <tr><td>武昌鱼</td><td>湖锦酒楼、老宅藕香</td><td>¥60-80</td></tr>
+      <tr><td>排骨藕汤</td><td>老宅藕香</td><td>¥40-60</td></tr>
+      <tr><td>小龙虾</td><td>靓靓蒸虾、巴厘龙虾</td><td>¥100-150</td></tr>
+      <tr><td>周黑鸭</td><td>街边各店</td><td>¥20-40</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ==================== DAY 3 ==================== -->
+<div class="section">
+  <h2>📅 DAY 3 — 7月12日（周六）武汉 → 恩施</h2>
+  <div class="day-box">
+    <h3>🚄 D5987 汉口 8:20 → 恩施 12:21（4小时）</h3>
+    <p><strong>早上：</strong>7:00前退房，地铁到汉口站（约30分钟），车上休息。</p>
+
+    <p><strong>中午：</strong>12:21到恩施站，先到酒店放行李。</p>
+
+    <p><strong>下午 14:00-17:00 - 恩施土司城</strong></p>
+    <ul>
+      <li>门票：约45元/人</li>
+      <li>土家族土司文化，九进堂建筑群拍照</li>
+      <li>位于恩施市区，打车15分钟</li>
+    </ul>
+
+    <p><strong>晚上 18:00-21:00 - 土家女儿城</strong></p>
+    <ul>
+      <li>免费！土家风情仿古小镇</li>
+      <li>土家歌舞表演（通常晚7点开始）</li>
+      <li>晚餐在这里解决——土家菜</li>
+    </ul>
+
+    <h3>🏨 住宿建议：恩施（住5晚，7.12-7.16）</h3>
+    <div class="hotel-card">
+      <span class="price">¥150-250/晚</span>
+      <div class="name">方案A：恩施市区酒店（推荐）</div>
+      <div class="area">📍 恩施火车站/女儿城附近 · 汉庭/如家等连锁 · 去哪儿都方便</div>
+    </div>
+    <div class="hotel-card">
+      <span class="price">¥200-300/晚</span>
+      <div class="name">方案B：沐抚古镇民宿（大峡谷附近）</div>
+      <div class="area">📍 恩施大峡谷游客中心旁 · 敬宾客栈/云隐民宿 · 大峡谷那天方便</div>
+    </div>
+    <p><span class="tag tag-info">💡 建议全程住恩施市区，各景区有直通车往返。如果大峡谷那天想轻松些，可以那一晚换住沐抚古镇。</span></p>
+  </div>
+</div>
+
+<!-- ==================== DAY 4 ==================== -->
+<div class="section">
+  <h2>📅 DAY 4 — 7月13日（周日）恩施大峡谷</h2>
+  <div class="day-box">
+    <h3>🏔️ 恩施大峡谷全天（最核心景点！）</h3>
+
+    <p><strong>交通：</strong>恩施市区→大峡谷景区直通车，约1.5小时，往返约70元/人。建议7:00出发。</p>
+
+    <p><strong>门票：</strong>约155-280元/人（含地缝+七星寨+索道/景交车，按所选套餐）</p>
+
+    <p><strong>游览路线：</strong></p>
+    <ul>
+      <li>上午：云龙地缝（瀑布群、暗河，约2小时）</li>
+      <li>中午：景区内午餐（自带干粮或景区小吃）</li>
+      <li>下午：七星寨（一炷香、绝壁栈道，约4小时）</li>
+      <li>18:00 返程直通车回市区</li>
+    </ul>
+
+    <p><span class="tag tag-danger">⚠️ 全天步行约15公里/2万步+，穿最舒服的鞋！带足水和零食。</span></p>
+    <p><span class="tag tag-warning">💡 体力不够可选索道上山，节约1小时爬山路程。</span></p>
+  </div>
+</div>
+
+<!-- ==================== DAY 5 ==================== -->
+<div class="section">
+  <h2>📅 DAY 5 — 7月14日（周一）腾龙洞</h2>
+  <div class="day-box">
+    <h3>🕳️ 腾龙洞（利川）</h3>
+
+    <p><strong>交通：</strong>恩施市区→腾龙洞直通车，约1.5小时（在利川市）</p>
+
+    <p><strong>门票：</strong>约150元/人（含激光秀+歌舞表演）</p>
+    <ul>
+      <li>亚洲最大溶洞，洞里常年8-12°C</li>
+      <li>激光秀表演（每日固定场次）</li>
+      <li>土家歌舞表演</li>
+      <li>游玩时间：3-4小时</li>
+      <li>下午15:00左右返程，时间充裕</li>
+    </ul>
+
+    <p><span class="tag tag-warning">🧥 洞内温度低！务必带一件外套或薄羽绒服！</span></p>
+
+    <p><strong>晚上：</strong>回到恩施市区，尝尝土家腊肉、张关合渣。</p>
+  </div>
+</div>
+
+<!-- ==================== DAY 6 ==================== -->
+<div class="section">
+  <h2>📅 DAY 6 — 7月15日（周二）恩施地心谷</h2>
+  <div class="day-box">
+    <h3>💎 恩施地心谷景区</h3>
+
+    <p><strong>交通：</strong>恩施市区→地心谷直通车，约1.5小时</p>
+
+    <p><strong>门票：</strong>约120元/人</p>
+    <ul>
+      <li>"地心归来不看谷"，峡谷+水上栈道</li>
+      <li>比恩施大峡谷轻松许多</li>
+      <li>水上浮桥、玻璃桥是亮点</li>
+      <li>游玩时间：4-5小时</li>
+      <li>约17:00返程</li>
+    </ul>
+
+    <p><strong>晚上：</strong>回到恩施，去女儿城再逛逛，或休息。</p>
+  </div>
+</div>
+
+<!-- ==================== DAY 7 ==================== -->
+<div class="section">
+  <h2>📅 DAY 7 — 7月16日（周三）屏山旅游区</h2>
+  <div class="day-box">
+    <h3>🛶 屏山峡谷（网红"悬浮船"）</h3>
+
+    <p><strong>交通：</strong>恩施市区→鹤峰屏山峡谷直通车，约2.5-3小时（最远的一个景点）</p>
+
+    <p><strong>门票：</strong>约210元/人</p>
+    <ul>
+      <li>网红"悬浮船"打卡地，水清如镜</li>
+      <li>建议一早出发，光线好</li>
+      <li>游玩时间：4-5小时</li>
+      <li>约18:00-19:00返回恩施</li>
+    </ul>
+
+    <p><span class="tag tag-danger">⚠️ 路程远，全天往返要5-6小时在路上。如果太累可替换为鹿院坪或其他轻松景点。</span></p>
+    <p><span class="tag tag-info">📸 拍照最佳时间：上午10点-下午2点，阳光直射水面效果最好。</span></p>
+  </div>
+</div>
+
+<!-- ==================== DAY 8 ==================== -->
+<div class="section">
+  <h2>📅 DAY 8 — 7月17日（周四）恩施 → 重庆</h2>
+  <div class="day-box">
+    <h3>🚄 D3 恩施 9:02 → 重庆北 12:02（3小时）</h3>
+
+    <p><strong>中午 12:02：</strong>到重庆北站，地铁到解放碑（约40分钟），放行李。</p>
+
+    <p><strong>下午 13:30-17:00 - 解放碑 + 八一路好吃街</strong></p>
+    <ul>
+      <li>解放碑打卡</li>
+      <li>八一路好吃街午餐：酸辣粉、山城小汤圆、烤猪蹄</li>
+      <li>逛洪崖洞（白天看建筑，晚上看灯光）</li>
+    </ul>
+
+    <p><strong>傍晚 18:00-19:30 - 长江索道</strong></p>
+    <ul>
+      <li>单程约20元/人</li>
+      <li>从渝中区坐到南岸区，空中俯瞰两江</li>
+    </ul>
+
+    <p><strong>晚上 20:00-22:00 - 洪崖洞夜景 + 火锅</strong></p>
+    <ul>
+      <li>洪崖洞亮灯后像千与千寻场景</li>
+      <li>晚餐：珮姐老火锅 / 亖井火锅</li>
+      <li>人均80-120元</li>
+    </ul>
+
+    <h3>🏨 住宿建议：重庆（住1晚）</h3>
+    <div class="hotel-card">
+      <span class="price">¥150-250/晚</span>
+      <div class="name">1. 莫泰/如家(解放碑店)</div>
+      <div class="area">📍 解放碑核心区 · 步行到洪崖洞 · 性价比高</div>
+    </div>
+    <div class="hotel-card">
+      <span class="price">¥200-350/晚</span>
+      <div class="name">2. 解放碑周边民宿/公寓</div>
+      <div class="area">📍 解放碑商圈 · 江景房 · 空间大</div>
+    </div>
+    <div class="hotel-card">
+      <span class="price">¥200-300/晚</span>
+      <div class="name">3. 云舍精品酒店(解放碑店)</div>
+      <div class="area">📍 楼下就是八一小吃街 · 步行到解放碑3分钟</div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== DAY 9 ==================== -->
+<div class="section">
+  <h2>📅 DAY 9 — 7月18日（周五）重庆 → 沈阳</h2>
+  <div class="day-box">
+    <h3>上午自由活动 → 下午飞 ✈️ 重庆 17:05 → 沈阳 21:45（QW6054）</h3>
+
+    <p><strong>上午 8:00-11:00（二选一）：</strong></p>
+    <p><strong>方案A：</strong>磁器口古镇（免费，逛古镇+陈麻花+毛血旺，约3小时）</p>
+    <p><strong>方案B：</strong>李子坝轻轨穿楼（网红打卡，免费，1小时）+ 鹅岭二厂文创园（1-2小时）</p>
+
+    <p><strong>中午 12:00：</strong>午餐后回酒店取行李</p>
+    <p><strong>下午 14:00：</strong>出发去重庆江北机场（地铁约1小时）</p>
+    <p><strong>晚上 21:45：</strong>抵达沈阳，行程结束 🎉</p>
+  </div>
+</div>
+
+<!-- ==================== 住宿总览 ==================== -->
+<div class="section">
+  <h2>🏨 住宿总览 & 预算</h2>
+  <table>
+    <tr><th>城市</th><th>日期</th><th>晚数</th><th>推荐区域</th><th>预算/晚</th><th>小计</th></tr>
+    <tr><td>武汉</td><td>7.10-7.11</td><td>2晚</td><td>武昌区（黄鹤楼/户部巷周边）</td><td>¥150-250</td><td>¥300-500</td></tr>
+    <tr><td>恩施</td><td>7.12-7.16</td><td>5晚</td><td>恩施市区（火车站/女儿城）</td><td>¥150-250</td><td>¥750-1,250</td></tr>
+    <tr><td>重庆</td><td>7.17</td><td>1晚</td><td>解放碑商圈</td><td>¥150-300</td><td>¥150-300</td></tr>
+    <tr style="font-weight:bold; background:#e8f4f8;"><td colspan="4">住宿合计（8晚）</td><td></td><td>¥1,200-2,050</td></tr>
+  </table>
+  <p><span class="tag tag-info">💡 以上价格参考携程/美团，7月属旺季，建议提前15天以上预订。</span></p>
+</div>
+
+<!-- ==================== 交通总览 ==================== -->
+<div class="section">
+  <h2>🚗 短途交通指南</h2>
+  <table>
+    <tr><th>城市</th><th>推荐方式</th><th>说明</th></tr>
+    <tr><td>武汉</td><td>地铁+打车</td><td>地铁覆盖主要景点，手机扫码乘车（支付宝"出行"）</td></tr>
+    <tr><td>恩施</td><td>景区直通车</td><td>恩施火车站/市区发车，往返各大景区，单程1.5-3小时</td></tr>
+    <tr><td>恩施市内</td><td>公交/打车</td><td>起步价便宜，女儿城/土司城都在市内</td></tr>
+    <tr><td>重庆</td><td>地铁+步行</td><td>轻轨覆盖主城，解放碑-洪崖洞步行可达</td></tr>
+  </table>
+
+  <div class="note">
+    <strong>🚌 恩施景区直通车小贴士：</strong><br>
+    · 发车时间：一般7:00-8:30发车，下午15:00-18:00返程<br>
+    · 乘车点：恩施火车站、恩施客运站<br>
+    · 建议提前一天联系确认班次<br>
+    · 恩施大峡谷/腾龙洞/地心谷/屏山峡谷都有直通车<br>
+    · 往返车费各景区约60-90元/人
+  </div>
+</div>
+
+<!-- ==================== 美食总览 ==================== -->
+<div class="section">
+  <h2>🍜 三城美食地图</h2>
+
+  <h3>🏙️ 武汉 · "过早"之都</h3>
+  <table>
+    <tr><th>美食</th><th>推荐店</th><th>位置</th></tr>
+    <tr><td>热干面</td><td>蔡林记</td><td>户部巷/连锁</td></tr>
+    <tr><td>三鲜豆皮</td><td>老通城</td><td>吉庆街</td></tr>
+    <tr><td>油饼包烧麦</td><td>赵师傅</td><td>粮道街</td></tr>
+    <tr><td>武昌鱼</td><td>湖锦酒楼</td><td>连锁</td></tr>
+    <tr><td>排骨藕汤</td><td>老宅藕香</td><td>武昌</td></tr>
+    <tr><td>小龙虾</td><td>靓靓蒸虾/巴厘龙虾</td><td>万松园/吉庆街</td></tr>
+  </table>
+
+  <h3>🏔️ 恩施 · 土家风味</h3>
+  <table>
+    <tr><th>美食</th><th>说明</th></tr>
+    <tr><td>张关合渣</td><td>土家"懒豆腐"，豆香浓郁，配菜丰富</td></tr>
+    <tr><td>土家腊肉</td><td>烟熏腊肉，炒蒜苗/炖锅都好吃</td></tr>
+    <tr><td>鲊广椒</td><td>辣椒+玉米面发酵炒制，下饭神器</td></tr>
+    <tr><td>恩施小土豆</td><td>炕土豆，外酥里糯，街边随处可见</td></tr>
+    <tr><td>莼菜</td><td>恩施特色蔬菜，清爽滑嫩</td></tr>
+    <tr><td>油茶汤</td><td>土家传统饮品，香甜可口</td></tr>
+  </table>
+
+  <h3>🌆 重庆 · 麻辣江湖</h3>
+  <table>
+    <tr><th>美食</th><th>推荐</th></tr>
+    <tr><td>重庆火锅</td><td>珮姐老火锅、亖井火锅（人均80-120元）</td></tr>
+    <tr><td>重庆小面</td><td>解放碑/八一路随便一家都好吃</td></tr>
+    <tr><td>酸辣粉</td><td>好又来酸辣粉（八一路）</td></tr>
+    <tr><td>山城小汤圆</td><td>八一路好吃街</td></tr>
+    <tr><td>毛血旺</td><td>磁器口古镇</td></tr>
+    <tr><td>豆花饭</td><td>老重庆人的早餐</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 费用预算 ==================== -->
+<div class="section">
+  <h2>💰 费用预算（预估/人）</h2>
+  <table>
+    <tr><th>项目</th><th>明细</th><th>预算</th></tr>
+    <tr><td>✈️ 去程机票</td><td>沈阳→武汉</td><td>¥600-1,200</td></tr>
+    <tr><td>🚄 武汉→恩施</td><td>D5987 动车二等座</td><td>¥180-220</td></tr>
+    <tr><td>🚄 恩施→重庆</td><td>D3 动车二等座</td><td>¥110-150</td></tr>
+    <tr><td>✈️ 返程机票</td><td>重庆→沈阳 QW6054</td><td>¥700-1,300</td></tr>
+    <tr><td>🏨 住宿</td><td>8晚经济型酒店/民宿</td><td>¥1,200-2,050</td></tr>
+    <tr><td>🎫 门票</td><td>黄鹤楼+恩施4景区+长江索道</td><td>¥650-850</td></tr>
+    <tr><td>🚌 短途交通</td><td>景区直通车/地铁/打车</td><td>¥500-700</td></tr>
+    <tr><td>🍜 餐饮</td><td>9天三餐+小吃</td><td>¥900-1,500</td></tr>
+    <tr style="font-weight:bold; background:#e8f4f8;"><td colspan="2">💰 总计（每人）</td><td>¥5,000-8,000</td></tr>
+  </table>
+</div>
+
+<!-- ==================== 注意事项 ==================== -->
+<div class="section">
+  <h2>⚠️ 重要提醒</h2>
+  <div class="note">
+    <strong>1. 恩施景区体力消耗大：</strong>恩施大峡谷全天2万步+，提前锻炼！穿防滑运动鞋。<br><br>
+    <strong>2. 雨季准备：</strong>7月中旬恩施降雨集中，带雨衣（比雨伞方便）、防水鞋套、手机防水袋。<br><br>
+    <strong>3. 提前预约：</strong>湖北省博物馆（免费但限流）、恩施大峡谷门票旺季需提前在线购买。<br><br>
+    <strong>4. 防暑降温：</strong>武汉/重庆体感温度高，带藿香正气水、小风扇、湿巾。<br><br>
+    <strong>5. 身份证随身：</strong>进景区、坐火车飞机都要。<br><br>
+    <strong>6. 现金备少量：</strong>恩施山区个别小店不支持扫码支付。<br><br>
+    <strong>7. 保险：</strong>建议购买旅游意外险，约¥20-50/人，保9天。
+  </div>
+</div>
+
+<div class="footer">
+  湖北武汉恩施旅游行程规划 · 生成于 2026年6月17日 · 嘉驰蓝海 · 小兰整理<br>
+  以上推荐基于网络搜索，实际价格以预订时为准
+</div>
+
+</div>
+</body>
+</html>
