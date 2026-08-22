@@ -36,7 +36,12 @@
             font-weight: 800;
             letter-spacing: -0.3px;
         }
-        header h1 span { color: #1a73e8; }
+        header h1 span {
+            background: linear-gradient(135deg, #4fc3f7, #1a73e8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
         header h1 em { color: #333; font-style: normal; }
         header nav { display: flex; gap: 6px; }
         header nav a {
@@ -62,6 +67,13 @@
             text-align: center;
             /* 深邃科技蓝渐变 */
             background: linear-gradient(160deg, #0a1628 0%, #0d2137 25%, #0f2b4a 50%, #103c66 75%, #0d3a6e 100%);
+            background-size: 220% 220%;
+            animation: heroFlow 16s ease infinite;
+        }
+        @keyframes heroFlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         /* 网格线背景 */
         .hero::before {
@@ -69,11 +81,16 @@
             position: absolute;
             inset: 0;
             background-image:
-                linear-gradient(rgba(26,115,232,0.06) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(26,115,232,0.06) 1px, transparent 1px);
-            background-size: 60px 60px;
+                linear-gradient(rgba(26,115,232,0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26,115,232,0.08) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: gridShift 22s linear infinite;
             mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
             -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+        }
+        @keyframes gridShift {
+            0% { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
         }
         /* 光晕装饰 */
         .hero::after {
@@ -92,20 +109,20 @@
             position: absolute;
             border-radius: 50%;
             filter: blur(60px);
-            opacity: 0.4;
+            opacity: 0.45;
             animation: floatOrb 8s ease-in-out infinite alternate;
             pointer-events: none;
         }
         .hero-glow-orb.orb1 {
             width: 300px; height: 300px;
-            background: rgba(26,115,232,0.35);
-            top: 10%; right: 10%;
+            background: radial-gradient(circle, rgba(26,115,232,0.45), transparent 70%);
+            top: 8%; right: 8%;
             animation-delay: 0s;
         }
         .hero-glow-orb.orb2 {
             width: 200px; height: 200px;
-            background: rgba(79,195,247,0.25);
-            bottom: 15%; left: 15%;
+            background: radial-gradient(circle, rgba(79,195,247,0.35), transparent 70%);
+            bottom: 12%; left: 12%;
             animation-delay: -4s;
         }
         @keyframes floatOrb {
@@ -113,7 +130,15 @@
             100% { transform: translate(20px, -20px) scale(1.1); }
         }
 
-        .hero .container { position: relative; z-index: 2; }
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            animation: heroIn 0.9s ease both;
+        }
+        @keyframes heroIn {
+            from { opacity: 0; transform: translateY(24px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -153,19 +178,21 @@
             flex-wrap: wrap;
         }
         .stat-card {
-            background: rgba(255,255,255,0.09);
-            border: 1px solid rgba(255,255,255,0.12);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            box-shadow: 0 4px 24px rgba(0,0,0,0.22);
             border-radius: 16px;
             padding: 18px 28px;
             min-width: 120px;
             transition: all 0.3s ease;
         }
         .stat-card:hover {
-            background: rgba(255,255,255,0.14);
-            transform: translateY(-2px);
-            border-color: rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.16);
+            transform: translateY(-4px) scale(1.03);
+            border-color: rgba(79,195,247,0.55);
+            box-shadow: 0 10px 36px rgba(79,195,247,0.28);
         }
         .stat-number {
             font-size: 2rem;
@@ -299,6 +326,12 @@
                 linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
             background-size: 30px 30px;
+            animation: gridRotate 30s linear infinite;
+            transform-origin: center;
+        }
+        @keyframes gridRotate {
+            0% { transform: rotate(0deg) scale(1.4); }
+            100% { transform: rotate(360deg) scale(1.4); }
         }
         .article-card.featured .featured-icon {
             font-size: 4rem;
