@@ -6,239 +6,378 @@
     <title>嘉驰科技Blog - 网络技术与监控安防</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; 
-            color: #333; 
-            line-height: 1.8; 
-            background: #f0f2f5; 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            color: #333;
+            line-height: 1.8;
+            background: #f5f7fa;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 20px; }
-        
-        /* 导航栏 */
-        header { 
-            background: rgba(255,255,255,0.95); 
-            backdrop-filter: blur(10px);
-            position: sticky; 
-            top: 0; 
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== 导航栏 ===== */
+        header {
+            background: rgba(255,255,255,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            position: sticky;
+            top: 0;
             z-index: 100;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1); 
+            box-shadow: 0 1px 12px rgba(0,0,0,0.08);
+            border-bottom: 1px solid rgba(0,0,0,0.04);
         }
-        header .container { 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            padding: 15px 20px;
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 24px;
         }
-        header h1 { 
-            font-size: 1.4rem; 
-            font-weight: 700; 
-            background: linear-gradient(135deg, #1a73e8, #0d47a1);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        header h1 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            letter-spacing: -0.3px;
         }
-        header nav a { 
-            color: #555; 
-            text-decoration: none; 
-            margin-left: 25px; 
-            font-size: 0.95rem; 
+        header h1 span { color: #1a73e8; }
+        header h1 em { color: #333; font-style: normal; }
+        header nav { display: flex; gap: 6px; }
+        header nav a {
+            color: #555;
+            text-decoration: none;
+            padding: 7px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             font-weight: 500;
-            transition: color 0.2s;
+            transition: all 0.25s ease;
         }
-        header nav a:hover { color: #1a73e8; }
-        
-        /* Hero区域 - 网络科技感背景 */
-        .hero { 
-            background: linear-gradient(135deg, rgba(0,20,40,0.85) 0%, rgba(0,60,100,0.85) 50%, rgba(26,35,126,0.9) 100%), 
-                        url('images/hero-bg.jpg'); 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: white; 
-            padding: 100px 0 120px; 
-            text-align: center; 
+        header nav a:hover {
+            color: #1a73e8;
+            background: #e8f0fe;
+        }
+
+        /* ===== Hero 区域 ===== */
+        .hero {
             position: relative;
             overflow: hidden;
+            color: white;
+            padding: 90px 0 70px;
+            text-align: center;
+            /* 深邃科技蓝渐变 */
+            background: linear-gradient(160deg, #0a1628 0%, #0d2137 25%, #0f2b4a 50%, #103c66 75%, #0d3a6e 100%);
         }
+        /* 网格线背景 */
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at 30% 20%, rgba(0,150,255,0.15) 0%, transparent 40%),
-                        radial-gradient(ellipse at 70% 80%, rgba(100,0,255,0.1) 0%, transparent 40%);
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(26,115,232,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(26,115,232,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 30%, transparent 100%);
         }
-        .hero .container { position: relative; z-index: 1; }
-        .hero h2 { 
-            font-size: 2.5rem; 
-            margin-bottom: 15px; 
-            font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        /* 光晕装饰 */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 700px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(26,115,232,0.18) 0%, rgba(79,195,247,0.08) 40%, transparent 70%);
+            pointer-events: none;
         }
-        .hero p { 
-            font-size: 1.2rem; 
-            opacity: 0.9; 
-            margin-bottom: 30px;
+        /* 浮动光点 */
+        .hero-glow-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.4;
+            animation: floatOrb 8s ease-in-out infinite alternate;
+            pointer-events: none;
         }
+        .hero-glow-orb.orb1 {
+            width: 300px; height: 300px;
+            background: rgba(26,115,232,0.35);
+            top: 10%; right: 10%;
+            animation-delay: 0s;
+        }
+        .hero-glow-orb.orb2 {
+            width: 200px; height: 200px;
+            background: rgba(79,195,247,0.25);
+            bottom: 15%; left: 15%;
+            animation-delay: -4s;
+        }
+        @keyframes floatOrb {
+            0% { transform: translate(0, 0) scale(1); }
+            100% { transform: translate(20px, -20px) scale(1.1); }
+        }
+
+        .hero .container { position: relative; z-index: 2; }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(8px);
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 22px;
+            letter-spacing: 0.3px;
+        }
+        .hero-badge::before { content: '●'; color: #4fc3f7; font-size: 0.65rem; }
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+        .hero h2 em { font-style: normal; background: linear-gradient(135deg, #4fc3f7, #81d4fa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero p {
+            font-size: 1.12rem;
+            opacity: 0.78;
+            max-width: 520px;
+            margin: 0 auto 36px;
+            line-height: 1.7;
+        }
+
+        /* 统计数字 - 玻璃态卡片 */
         .hero-stats {
             display: flex;
             justify-content: center;
-            gap: 40px;
-            margin-top: 30px;
+            gap: 18px;
+            flex-wrap: wrap;
         }
-        .hero-stats .stat {
-            text-align: center;
+        .stat-card {
+            background: rgba(255,255,255,0.09);
+            border: 1px solid rgba(255,255,255,0.12);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 16px;
+            padding: 18px 28px;
+            min-width: 120px;
+            transition: all 0.3s ease;
         }
-        .hero-stats .stat-number {
+        .stat-card:hover {
+            background: rgba(255,255,255,0.14);
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .stat-number {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 800;
             display: block;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff, #b3e5fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
-        .hero-stats .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.8;
+        .stat-label {
+            font-size: 0.82rem;
+            opacity: 0.7;
+            margin-top: 2px;
         }
-        
-        /* 分类标签区 */
+
+        /* ===== 分类标签区 ===== */
         .categories {
             background: white;
-            padding: 35px 0 30px;
-            margin-top: -40px;
+            padding: 32px 0 28px;
+            margin-top: -28px;
             position: relative;
-            z-index: 2;
-            border-radius: 16px 16px 0 0;
-            box-shadow: 0 -4px 20px rgba(0,0,0,0.06);
+            z-index: 3;
+            border-radius: 20px 20px 0 0;
+            box-shadow: 0 -4px 24px rgba(0,0,0,0.06);
         }
         .category-header {
             display: flex;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 22px;
+            gap: 10px;
+            margin-bottom: 20px;
         }
         .category-header::before {
             content: '';
             width: 4px;
-            height: 24px;
+            height: 22px;
             background: linear-gradient(180deg, #1a73e8, #4fc3f7);
             border-radius: 2px;
         }
-        .section-title { 
-            font-size: 1.5rem; 
-            color: #1a1a1a; 
+        .section-title {
+            font-size: 1.35rem;
+            color: #1a1a1a;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
         }
-        .categories .container {
-            display: block;
-        }
+        .categories .container { display: block; }
         .tag-cloud {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
-            justify-content: flex-start;
+            gap: 9px;
         }
         .category-tag {
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            padding: 9px 20px;
-            background: linear-gradient(135deg, #f8faff 0%, #f0f4ff 100%);
+            padding: 8px 18px;
+            background: #f5f7fa;
             color: #444;
             text-decoration: none;
-            border-radius: 24px;
-            font-size: 0.9rem;
+            border-radius: 22px;
+            font-size: 0.87rem;
             font-weight: 500;
-            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
-            border: 1px solid #e0e6f0;
-            position: relative;
-            overflow: hidden;
-        }
-        .category-tag::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s;
-        }
-        .category-tag:hover::after {
-            left: 100%;
+            transition: all 0.28s cubic-bezier(.25,.8,.25,1);
+            border: 1px solid transparent;
         }
         .category-tag:hover {
-            background: linear-gradient(135deg, #1a73e8 0%, #1565c0 100%);
+            background: linear-gradient(135deg, #1a73e8, #1565c0);
             color: white;
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: 0 6px 18px rgba(26,115,232,0.35);
-            border-color: transparent;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(26,115,232,0.3);
         }
-        
-        /* 文章卡片 */
+
+        /* ===== 文章区域 ===== */
         .articles-section {
             background: white;
-            padding: 40px 0 60px;
+            padding: 38px 0 56px;
         }
         .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 25px;
+            margin-bottom: 24px;
         }
-
-        .view-all { 
-            color: #1a73e8; 
-            text-decoration: none; 
-            font-size: 0.95rem;
-            font-weight: 500;
+        .view-all {
+            color: #1a73e8;
+            text-decoration: none;
+            font-size: 0.93rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 5px;
+            gap: 4px;
+            transition: gap 0.2s;
         }
-        .view-all:hover { text-decoration: underline; }
-        
+        .view-all:hover { gap: 8px; }
+
         .article-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
             gap: 20px;
         }
+        /* 首篇文章大卡片 */
+        .article-card.featured {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: linear-gradient(135deg, #f8fbff 0%, #f0f5ff 100%);
+            border: 1px solid #d4e3f7;
+            overflow: hidden;
+        }
+        .article-card.featured .featured-left {
+            padding: 28px 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .article-card.featured .featured-right {
+            background: linear-gradient(135deg, #1a73e8 0%, #1565c0 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-card.featured .featured-right::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .article-card.featured .featured-icon {
+            font-size: 4rem;
+            position: relative;
+            z-index: 1;
+            opacity: 0.95;
+        }
+        .article-card.featured .card-tag {
+            background: #1a73e8;
+            color: white;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+        }
+        .article-card.featured h3 {
+            font-size: 1.35rem;
+            margin-top: 12px;
+            margin-bottom: 10px;
+            line-height: 1.45;
+        }
+        .article-card.featured .card-meta { font-size: 0.87rem; }
+        .article-card.featured .featured-desc {
+            color: #555;
+            font-size: 0.92rem;
+            margin-top: 8px;
+            line-height: 1.65;
+        }
+
+        /* 普通文章卡片 */
         .article-card {
             background: white;
-            border-radius: 12px;
-            padding: 20px;
-            border: 1px solid #e8eaed;
-            transition: all 0.3s;
+            border-radius: 14px;
+            padding: 22px;
+            border: 1px solid #eee;
+            transition: all 0.3s cubic-bezier(.25,.8,.25,1);
             cursor: pointer;
             text-decoration: none;
             color: inherit;
             display: block;
+            position: relative;
+            overflow: hidden;
+        }
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #1a73e8, #4fc3f7);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
         .article-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-color: #1a73e8;
+            transform: translateY(-5px);
+            box-shadow: 0 12px 32px rgba(26,115,232,0.12);
+            border-color: #c5daf5;
         }
+        .article-card:hover::before { opacity: 1; }
         .article-card .card-tag {
             display: inline-block;
             background: #e8f0fe;
             color: #1a73e8;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            margin-bottom: 10px;
-            font-weight: 500;
+            padding: 3px 11px;
+            border-radius: 10px;
+            font-size: 0.74rem;
+            margin-bottom: 11px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
         }
         .article-card h3 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             color: #1a1a1a;
             margin-bottom: 10px;
             line-height: 1.5;
-            font-weight: 600;
+            font-weight: 650;
         }
         .article-card .card-meta {
-            color: #888;
-            font-size: 0.85rem;
+            color: #999;
+            font-size: 0.83rem;
             display: flex;
             align-items: center;
             gap: 8px;
@@ -246,61 +385,83 @@
         .article-card .card-meta .dot {
             width: 4px;
             height: 4px;
-            background: #ccc;
+            background: #ddd;
             border-radius: 50%;
         }
-        
-        /* 特色区域 */
+
+        /* ===== 特色区域 ===== */
         .features {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e8eaed 100%);
-            padding: 60px 0;
+            background: linear-gradient(180deg, #f0f4fa 0%, #e8edf5 100%);
+            padding: 56px 0;
         }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
         .feature-item {
+            background: white;
             text-align: center;
-            padding: 30px;
+            padding: 34px 24px;
+            border-radius: 16px;
+            border: 1px solid #e8ecf1;
+            transition: all 0.3s ease;
+        }
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0,0,0,0.07);
+            border-color: #c5daf5;
         }
         .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
+            font-size: 2.6rem;
+            margin-bottom: 14px;
+            display: block;
         }
         .feature-item h3 {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #1a1a1a;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 700;
         }
         .feature-item p {
-            color: #666;
-            font-size: 0.95rem;
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.6;
         }
-        
-        footer { 
-            text-align: center; 
-            padding: 30px; 
-            color: #999; 
-            font-size: 0.85rem; 
+
+        /* ===== 页脚 ===== */
+        footer {
+            text-align: center;
+            padding: 28px;
+            color: #aaa;
+            font-size: 0.84rem;
             background: white;
-            border-top: 1px solid #e8eaed;
+            border-top: 1px solid #eee;
         }
-        
-        @media (max-width: 600px) {
-            .hero { padding: 60px 0 80px; }
-            .hero h2 { font-size: 1.8rem; }
-            .hero-stats { gap: 20px; }
-            .hero-stats .stat-number { font-size: 1.5rem; }
+
+        /* ===== 响应式 ===== */
+        @media (max-width: 768px) {
+            .hero { padding: 60px 0 50px; }
+            .hero h2 { font-size: 2rem; }
+            .hero-stats { gap: 12px; }
+            .stat-card { padding: 14px 20px; min-width: 100px; }
+            .stat-number { font-size: 1.6rem; }
+            .article-card.featured {
+                grid-template-columns: 1fr;
+            }
+            .article-card.featured .featured-right { padding: 24px; }
+            .article-card.featured .featured-icon { font-size: 3rem; }
             .article-grid { grid-template-columns: 1fr; }
-            header nav a { margin-left: 15px; font-size: 0.85rem; }
+            .features-grid { grid-template-columns: 1fr; }
+            header nav { gap: 2px; }
+            header nav a { padding: 6px 10px; font-size: 0.83rem; }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>嘉驰科技Blog</h1>
+            <h1><span>嘉驰科技</span><em>Blog</em></h1>
             <nav>
                 <a href="index.html">首页</a>
                 <a href="articles.html">文章</a>
@@ -309,33 +470,37 @@
             </nav>
         </div>
     </header>
-    
+
+    <!-- Hero 区域 -->
     <div class="hero">
+        <div class="hero-glow-orb orb1"></div>
+        <div class="hero-glow-orb orb2"></div>
         <div class="container">
-            <h2>嘉驰科技Blog</h2>
-            <p>专注网络技术、监控安防与实用经验分享</p>
+            <div class="hero-badge">持续更新中</div>
+            <h2>嘉驰科技<em>Blog</em></h2>
+            <p>专注网络技术、监控安防与实用经验分享<br>每一篇都来自一线工程实践</p>
             <div class="hero-stats">
-                <div class="stat">
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-number">29</span>
                     <span class="stat-label">篇文章</span>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-number">8</span>
                     <span class="stat-label">个分类</span>
                 </div>
-                <div class="stat">
+                <div class="stat-card">
                     <span class="stat-number">2025</span>
                     <span class="stat-label">年创立</span>
                 </div>
             </div>
         </div>
     </div>
-    
+
+    <!-- 分类标签 -->
     <div class="categories">
         <div class="container">
             <div class="category-header">
-                <h3 class="section-title">📂 全部文章</h3>
+                <h3 class="section-title">📂 全部分类</h3>
             </div>
             <div class="tag-cloud">
                 <a href="articles.html" class="category-tag"><span>📡</span> 网络技术</a>
@@ -348,7 +513,8 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- 最新文章 -->
     <div class="articles-section">
         <div class="container">
             <div class="section-header">
@@ -356,13 +522,22 @@
                 <a href="articles.html" class="view-all">查看全部 →</a>
             </div>
             <div class="article-grid">
-                <a href="posts/海康门禁系统常见的接线方法.html" class="article-card">
-                    <span class="card-tag">网络技术</span>
-                    <h3>海康门禁系统常见的接线方法</h3>
-                    <div class="card-meta">
-                        <span>📅 2026年8月22日</span>
+                <!-- 首篇：特色大卡片 -->
+                <a href="posts/海康门禁系统常见的接线方法.html" class="article-card featured">
+                    <div class="featured-left">
+                        <span class="card-tag">网络技术</span>
+                        <h3>海康门禁系统常见的接线方法</h3>
+                        <div class="card-meta">
+                            <span>📅 2026年8月22日</span>
+                        </div>
+                        <p class="featured-desc">这是标准的门禁系统接线系统图，详细的标准配线方法还需要按照设备要求。但是这是通用的走线路径通道。</p>
+                    </div>
+                    <div class="featured-right">
+                        <span class="featured-icon">🚪</span>
                     </div>
                 </a>
+
+                <!-- 其余普通卡片 -->
                 <a href="posts/360可视门铃拆解图.html" class="article-card">
                     <span class="card-tag">监控器材</span>
                     <h3>360可视门铃拆解图</h3>
@@ -403,32 +578,33 @@
             </div>
         </div>
     </div>
-    
+
+    <!-- 特色区域 -->
     <div class="features">
         <div class="container">
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon">🌐</div>
+                    <span class="feature-icon">🌐</span>
                     <h3>网络技术</h3>
                     <p>路由器配置、系统安装、网络故障排查等实用教程</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">📹</div>
+                    <span class="feature-icon">📹</span>
                     <h3>监控安防</h3>
                     <p>海康威视、萤石云等监控设备的安装与维护经验</p>
                 </div>
                 <div class="feature-item">
-                    <div class="feature-icon">🛠️</div>
+                    <span class="feature-icon">🛠️</span>
                     <h3>工具软件</h3>
                     <p>各类管理工具、刷机工具的使用方法与技巧</p>
                 </div>
             </div>
         </div>
     </div>
-    
+
     <footer>
         <div class="container">
-            © 2025 嘉驰科技Blog. All rights reserved.
+            © 2025–2026 嘉驰科技Blog · All rights reserved.
         </div>
     </footer>
 </body>
