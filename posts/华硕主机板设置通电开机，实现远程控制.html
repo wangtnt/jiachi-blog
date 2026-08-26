@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华硕主机板设置通电开机，实现远程控制 - 嘉驰科技Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.8; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header h1 a { color: white; text-decoration: none; }
+        header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: white; }
+        .post-meta { color: #666; margin-bottom: 20px; font-size: 0.9rem; display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .post-meta .tag { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+        .post-content { background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .post-content h1 { font-size: 1.8rem; margin-bottom: 10px; color: #1a1a1a; }
+        .post-content h2 { font-size: 1.4rem; margin: 25px 0 10px; color: #1a1a1a; border-left: 3px solid #1a73e8; padding-left: 10px; }
+        .post-content h3 { font-size: 1.2rem; margin: 20px 0 8px; color: #333; }
+        .post-content p { margin-bottom: 15px; }
+        .post-content img { max-width: 100%; height: auto; border-radius: 4px; margin: 15px 0; display: block; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .post-content code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #d63384; }
+        .post-content pre { background: #282c34; color: #abb2bf; padding: 15px; border-radius: 6px; overflow-x: auto; margin: 15px 0; }
+        .post-content pre code { background: none; color: inherit; padding: 0; }
+        .post-content blockquote { border-left: 3px solid #1a73e8; padding: 10px 15px; margin: 15px 0; background: #f0f6ff; color: #555; }
+        .post-content ul, .post-content ol { padding-left: 25px; margin-bottom: 15px; }
+        .post-content li { margin-bottom: 5px; }
+        .post-content table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .post-content th, .post-content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        .post-content th { background: #f5f5f5; font-weight: 600; }
+        .post-content a { color: #1a73e8; text-decoration: none; }
+        .post-content a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.85rem; margin-top: 30px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        @media (max-width: 600px) {
+            .post-content { padding: 20px 15px; }
+            header .container { flex-direction: column; gap: 10px; }
+            header nav a { margin-left: 10px; margin-right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">嘉驰科技Blog</a></h1>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="../articles.html">文章</a>
+                <a href="../about.html">关于</a>
+                <a href="../contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <a href="../articles.html" class="back-link">← 返回文章列表</a>
+        <article class="post-content">
+            <h1>华硕主机板设置通电开机，实现远程控制</h1>
+            <div class="post-meta">
+                <span>📅 2026年8月26日</span>
+                <span class="tag">网络技术</span>
+            </div>
+            <hr>
+            <h2>前言</h2>
+            <p>很多场景需要电脑「来电自启」：远程办公要提前把家里/公司的电脑开起来、监控录像主机断电恢复后要自动开机、服务器机房来电后要自动恢复运行。其实不需要任何额外硬件，华硕主板的 BIOS 里就自带这个功能，设置一次即可永久生效。</p>
+            <p>这个功能对应的设置项就是——<strong>Restore AC Power Loss（断电恢复）</strong>。</p>
+
+            <p><img src="../images/华硕主机板设置通电开机，实现远程控制/image1.png" alt="华硕主板BIOS中Restore AC Power Loss设置界面"></p>
+            <p style="text-align:center;color:#888;font-size:0.85rem;">图1：BIOS 中 Advanced → APM Configuration → Restore AC Power Loss 设置项</p>
+
+            <h2>设置位置和操作步骤</h2>
+            <p>具体路径：<code>Advanced（高级）</code> → <code>APM Configuration（高级电源管理）</code> → <code>Restore AC Power Loss（断电恢复）</code></p>
+            <ol>
+                <li>开机按 <strong>Del</strong> 或 <strong>F2</strong> 进入 BIOS（新版华硕主板可按 <strong>F7</strong> 在简易模式和高级模式之间切换）；</li>
+                <li>切换到 <strong>Advanced</strong> 标签页，找到 <strong>APM Configuration</strong> 回车进入；</li>
+                <li>将 <strong>Restore AC Power Loss</strong> 设为 <strong>Power On</strong>；</li>
+                <li>按 <strong>F10</strong> 保存并退出，重启一次让设置生效。</li>
+            </ol>
+
+            <h2>三个选项的含义</h2>
+            <table>
+                <tr><th>选项</th><th>含义</th><th>适用场景</th></tr>
+                <tr><td><strong>Power Off</strong></td><td>来电后保持关机（默认）</td><td>普通家用电脑</td></tr>
+                <tr><td><strong>Power On</strong></td><td>来电后自动开机</td><td>远程控制、监控主机、服务器 ✅</td></tr>
+                <tr><td><strong>Last State</strong></td><td>来电后恢复断电前的状态</td><td>断电时是开机就开机，是关机就关机</td></tr>
+            </table>
+
+            <h2>配合远程控制的思路</h2>
+            <p>通电自启只是第一步，真正的远程控制链路是：</p>
+            <p><strong>智能插座（远程通电）→ 主板来电自启 → 系统自动登录 → 向日葵/ToDesk 等远程软件 → 手机/异地电脑接管</strong></p>
+            <p>这样人在外面也能随时把家里或公司的电脑开起来，用完再通过智能插座彻底断电，省电又安全。</p>
+
+            <p><img src="../images/华硕主机板设置通电开机，实现远程控制/image2.png" alt="远程控制电脑示意图"></p>
+            <p style="text-align:center;color:#888;font-size:0.85rem;">图2：远程开机控制链路示意——手机远程通电，主板来电自启，远程软件接管</p>
+
+            <h2>两个容易踩的坑</h2>
+            <ul>
+                <li><strong>ERP Ready 要设为 Disabled</strong>：ERP 开启后主板待机功耗被压到极低，部分供电口会被切断，可能导致来电不自启、网络唤醒失效；</li>
+                <li><strong>Deep Sleep（深度睡眠）建议关闭</strong>：开启后 S4/S5 状态下网卡等设备完全断电，同样会影响自动开机和远程唤醒。</li>
+            </ul>
+
+            <h2>总结</h2>
+            <p>一句话记住：<strong>Advanced → APM Configuration → Restore AC Power Loss → Power On，F10 保存</strong>。配合智能插座和远程控制软件，就能实现随时随地远程开机、远程操作，监控主机和办公电脑断电恢复后也能自动跑起来，不用人到场按电源键。</p>
+            <hr>
+            <p><strong>发布日期</strong>：2026-08-26</p>
+            <p><strong>标签</strong>：#网络技术</p>
+        </article>
+        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+    </div>
+</body>
+</html>
