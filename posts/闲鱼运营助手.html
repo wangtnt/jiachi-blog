@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>闲鱼监控店·每日运营助手 - 嘉驰科技Blog</title>
+<style>
+  :root{
+    --bg:#f7f8fa; --card:#fff; --ink:#222; --sub:#666;
+    --acc:#ffd000; --acc2:#ff8a00; --ok:#1aad19; --bd:#eee; --red:#e54d42;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;line-height:1.6}
+  header{background:linear-gradient(90deg,var(--acc),var(--acc2));padding:18px 20px;color:#3a2c00}
+  header h1{margin:0;font-size:20px}
+  header p{margin:4px 0 0;font-size:13px;opacity:.8}
+  .wrap{max-width:880px;margin:0 auto;padding:16px}
+  .tabs{display:flex;gap:8px;margin:16px 0}
+  .tab{flex:1;text-align:center;padding:10px;border:1px solid var(--bd);border-radius:10px;background:var(--card);cursor:pointer;font-size:14px;font-weight:600}
+  .tab.on{background:var(--acc);border-color:var(--acc2)}
+  .card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin-bottom:14px}
+  .card h2{margin:0 0 10px;font-size:16px;display:flex;align-items:center;gap:6px}
+  .tag{font-size:11px;background:#fff3d6;color:#a36b00;padding:2px 8px;border-radius:20px}
+  ul.cl{list-style:none;margin:0;padding:0}
+  ul.cl li{display:flex;align-items:flex-start;gap:10px;padding:7px 0;border-bottom:1px dashed var(--bd)}
+  ul.cl li:last-child{border-bottom:0}
+  ul.cl input{margin-top:5px}
+  .done{text-decoration:line-through;color:var(--sub)}
+  .lib{display:grid;grid-template-columns:1fr;gap:10px}
+  .item{border:1px solid var(--bd);border-radius:10px;padding:10px 12px;background:#fafafa}
+  .item .t{font-weight:600;font-size:14px;margin-bottom:4px}
+  .item .b{font-size:13px;color:var(--sub);white-space:pre-wrap}
+  .copy{float:right;background:var(--acc);border:none;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:700;cursor:pointer;color:#3a2c00}
+  .copy:active{transform:scale(.96)}
+  .keys{display:flex;flex-wrap:wrap;gap:6px}
+  .key{background:#fff3d6;color:#a36b00;border-radius:20px;padding:3px 10px;font-size:12px}
+  .red{color:var(--red);font-size:13px}
+  .note{font-size:12px;color:var(--sub);margin-top:6px}
+  footer{text-align:center;color:var(--sub);font-size:12px;padding:18px}
+</style>
+</head>
+<body>
+<div class="sitenav" style="background:#1a73e8;padding:10px 20px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;">
+  <a href="../index.html" style="color:#fff;font-weight:700;text-decoration:none;font-size:1.1rem;">嘉驰科技Blog</a>
+  <nav style="display:flex;gap:6px;">
+    <a href="../index.html" style="color:#fff;text-decoration:none;padding:6px 14px;border-radius:16px;font-size:.9rem;">首页</a>
+    <a href="../articles.html" style="color:#fff;text-decoration:none;padding:6px 14px;border-radius:16px;font-size:.9rem;">文章</a>
+    <a href="../about.html" style="color:#fff;text-decoration:none;padding:6px 14px;border-radius:16px;font-size:.9rem;">关于</a>
+    <a href="../contact.html" style="color:#fff;text-decoration:none;padding:6px 14px;border-radius:16px;font-size:.9rem;">联系</a>
+  </nav>
+</div>
+<header>
+  <h1>🐟 闲鱼监控店·每日运营助手</h1>
+  <p>鱼小铺 L4 + 运营提效包 ｜ 沈阳/辽宁同城 ｜ 合规半自动，不碰违规脚本</p>
+</header>
+
+<div class="wrap">
+  <div class="tabs">
+    <div class="tab on" id="tabA" onclick="setMode('A')">🟢 场景A：不忙·分次操作</div>
+    <div class="tab" id="tabB" onclick="setMode('B')">🔴 场景B：很忙·20分钟集中</div>
+  </div>
+
+  <!-- 场景A 清单 -->
+  <div class="card" id="listA">
+    <h2>📋 今日清单（分次版）<span class="tag">累计约20-35分钟·吃满流量窗口</span></h2>
+    <ul class="cl" id="clA"></ul>
+  </div>
+
+  <!-- 场景B 清单 -->
+  <div class="card" id="listB" style="display:none">
+    <h2>📋 今日清单（20分钟集中版）<span class="tag">晚20:00-21:00 单块</span></h2>
+    <ul class="cl" id="clB"></ul>
+    <div class="note">提前把标题/种草帖草稿备在下面"草稿库"，APP里只粘贴执行。</div>
+  </div>
+
+  <!-- 标题草稿库 -->
+  <div class="card">
+    <h2>🏷️ 标题草稿库（点复制→粘贴到闲鱼）<span class="tag">每周优化1次即可</span></h2>
+    <div class="lib" id="titles"></div>
+  </div>
+
+  <!-- 种草帖草稿库 -->
+  <div class="card">
+    <h2>🌱 种草帖草稿库（圈子日更1条）<span class="tag">复制→发对应圈子</span></h2>
+    <div class="lib" id="posts"></div>
+  </div>
+
+  <!-- 热搜词 -->
+  <div class="card">
+    <h2>🔥 监控类目热搜词参考</h2>
+    <div class="keys" id="keys"></div>
+    <div class="note">精确热搜词以你提效包「数据参谋→市场热搜」实时为准，这里给通用高频词。</div>
+  </div>
+
+  <!-- 红线 -->
+  <div class="card">
+    <h2>⛔ 红线（踩了限流/封店）</h2>
+    <p class="red">❌ 补单/虚拟单/刷量　❌ 给死链接天天擦亮　❌ 标题堆"最便宜/最好"　❌ 同号啥都卖（保持监控垂直）　❌ 大改标题（一周1次）</p>
+    <p class="red">⚠️ 任何"自动擦亮/群控/脚本"第三方工具都违规，坚决不用，用官方提效包+本助手足矣。</p>
+  </div>
+</div>
+
+<footer>本助手只做"想词+记步骤+复制"，所有动作仍在闲鱼APP内手动点，100%合规。</footer>
+
+<script>
+const MODE_KEY="xianyu_mode", CHK_KEY="xianyu_chk_";
+const data={
+  A:[
+    "0点｜闲鱼币急速卖推1个主推款（鱼小铺额度最足）",
+    "早7:30-9:00｜一键擦亮全店（只擦活链接）+回夜间咨询",
+    "午11:30-13:00｜做任务领曝光券→加1-2主推；上新/重发1条；微调1-2标题",
+    "下午碎片｜顺手回咨询(100%响应)；每周2-3次看数据参谋盯同行",
+    "晚19:00-21:30｜圈子种草帖1条；批量回咨询；引导当天成交带好评",
+    "每2-3天｜二次擦亮救1-2个长期无曝光老品（改发布地重发，间隔≥6h）"
+  ],
+  B:[
+    "0-1分｜一键擦亮全店（每日限1次，只擦活链接）",
+    "1-4分｜做每日任务，曝光券加到1-2主推款",
+    "4-6分｜闲鱼币急速卖推1个主推（0点额度最足，做不到放这就行）",
+    "6-12分｜上新/重发1条 + 热搜词微调1-2标题（草稿在下方）",
+    "12-16分｜圈子发1条种草帖（草稿在下方，直接复制）",
+    "16-20分｜批量回咨询(100%响应) + 引导当天成交带好评"
+  ]
+};
+const titles=[
+  "【9成新】海康威视 二手监控摄像头 家用商铺手机远程 POE",
+  "闲置 萤石无线摄像头 室外防水 手机看家 沈阳同城可装",
+  "二手监控全套 录像机+4摄像头 NVR 商铺家用 包教安装",
+  "沈阳上门收 废旧监控 海康/萤石 摄像头 NVR 回收也收",
+  "海康威视POE摄像头 工程 surplus 商铺厂房监控 可连手机",
+  "萤石C系列 无线摄像头 家用看家 语音对讲 二手9成新",
+  "二手NVR录像机 4/8路 接海康萤石摄像头 监控主机 包调试",
+  "室外防水监控摄像头 红外夜视 手机远程 商铺院子 可装",
+  "一套带走 商铺监控全套 显示器+录像机+4头 沈阳可装",
+  "海康威视 半球摄像头 室内吊顶 二手 包教安装"
+];
+const posts=[
+  {t:"① 商铺装监控避坑",b:"开小店想装监控别急着买。先想清几点：①要几个头、覆盖门口/收银/货区；②布线能走明线就别破墙，POE一根网线供电+传信号最省事；③录像机选4/8路留余量，海康萤石同协议能混接。④重点：夜间选红外或全彩，门口要能看清人脸。需要沈阳上门装可聊，包教包会。"},
+  {t:"② 家用选有线还是无线",b:"家用监控就两种：有线POE稳、不丢帧、适合长期看院子等固定位；无线WiFi省布线、手机随时看，但怕穿墙信号差。普通家庭门口/客厅选无线够用，院子/车库距离远就上有线。别贪便宜买杂牌，APP卡顿售后没人管。二手海康萤石性价比高，认准官方固件。"},
+  {t:"③ 海康 vs 萤石怎么选",b:"一句话：海康偏工程/商铺，型号全、POE录像机强；萤石是海康旗下消费级，无线家用更省心、APP好用。商铺多摄像头上 hikvision 录像机+头；家用1-2个看娃看宠选萤石C系列。两者协议互通，老摄像头别急着扔，换主机还能用。"},
+  {t:"④ 旧摄像头能不能接新录像机",b:"能，但看协议。海康/萤石同生态基本即插即用；老模拟头要加转接或换支持模拟的录像机。先看摄像头背面标签：标POE/ONVIF的，新NVR基本都能收。手里有闲置旧头别当垃圾，配个二手录像机又能用，省钱。沈阳地区可帮看型号是否兼容。"}
+];
+const keys=["监控摄像头","二手监控","海康威视","萤石","家用监控","商铺监控","POE摄像头","无线摄像头","室外防水监控","手机远程监控","NVR录像机","包教安装","沈阳同城可装","9成新闲置"];
+
+function render(){
+  for(const m of ["A","B"]){
+    const ul=document.getElementById("cl"+m); ul.innerHTML="";
+    data[m].forEach((txt,i)=>{
+      const id=CHK_KEY+m+i;
+      const li=document.createElement("li");
+      const cb=document.createElement("input");
+      cb.type="checkbox"; cb.id=id;
+      cb.checked=localStorage.getItem(id)==="1";
+      cb.onchange=()=>{localStorage.setItem(id,cb.checked?"1":"0");spa()};
+      const span=document.createElement("span"); span.textContent=txt;
+      cb.onchange=()=>{localStorage.setItem(id,cb.checked?"1":"0");span.className=cb.checked?"done":""};
+      if(cb.checked) span.className="done";
+      li.appendChild(cb); li.appendChild(span); ul.appendChild(li);
+    });
+  }
+  const tl=document.getElementById("titles"); tl.innerHTML="";
+  titles.forEach(t=>{
+    const d=document.createElement("div"); d.className="item";
+    d.innerHTML='<button class="copy" onclick="cp(this)">复制</button><div class="t">'+t+'</div>';
+    tl.appendChild(d);
+  });
+  const pl=document.getElementById("posts"); pl.innerHTML="";
+  posts.forEach(p=>{
+    const d=document.createElement("div"); d.className="item";
+    d.innerHTML='<button class="copy" onclick="cp(this)">复制</button><div class="t">'+p.t+'</div><div class="b">'+p.b+'</div>';
+    pl.appendChild(d);
+  });
+  const kl=document.getElementById("keys"); kl.innerHTML="";
+  keys.forEach(k=>{const s=document.createElement("span");s.className="key";s.textContent=k;kl.appendChild(s)});
+}
+function spa(){}
+function cp(btn){
+  const txt=btn.parentElement.querySelector(".t,.b")?btn.parentElement.innerText.replace("复制","").trim():"";
+  const full=btn.parentElement.innerText.replace("复制","").trim();
+  navigator.clipboard.writeText(full).then(()=>{const o=btn.textContent;btn.textContent="已复制✓";setTimeout(()=>btn.textContent=o,1200)});
+}
+function setMode(m){
+  document.getElementById("tabA").className="tab"+(m==="A"?" on":"");
+  document.getElementById("tabB").className="tab"+(m==="B"?" on":"");
+  document.getElementById("listA").style.display=m==="A"?"block":"none";
+  document.getElementById("listB").style.display=m==="B"?"block":"none";
+  localStorage.setItem(MODE_KEY,m);
+}
+render();
+setMode(localStorage.getItem(MODE_KEY)||"A");
+</script>
+</body>
+</html>
