@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萤石 C5T 筒机忘记密码恢复教程（CS-C5T-1B2WFR） - 嘉驰科技Blog</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; color: #333; line-height: 1.8; background: #f8f9fa; }
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+        header { background: linear-gradient(135deg, #1a73e8, #0d47a1); color: white; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+        header .container { display: flex; justify-content: space-between; align-items: center; }
+        header h1 { font-size: 1.5rem; font-weight: 600; }
+        header h1 a { color: white; text-decoration: none; }
+        header nav a { color: rgba(255,255,255,0.85); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: color 0.2s; }
+        header nav a:hover { color: white; }
+        .post-meta { color: #666; margin-bottom: 20px; font-size: 0.9rem; display: flex; gap: 15px; flex-wrap: wrap; align-items: center; }
+        .post-meta .tag { display: inline-block; background: #e8f0fe; color: #1a73e8; padding: 3px 10px; border-radius: 12px; font-size: 0.8rem; }
+        .post-content { background: white; padding: 30px 40px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .post-content h1 { font-size: 1.8rem; margin-bottom: 10px; color: #1a1a1a; }
+        .post-content h2 { font-size: 1.4rem; margin: 25px 0 10px; color: #1a1a1a; border-left: 3px solid #1a73e8; padding-left: 10px; }
+        .post-content h3 { font-size: 1.2rem; margin: 20px 0 8px; color: #333; }
+        .post-content p { margin-bottom: 15px; }
+        .post-content img { max-width: 100%; height: auto; border-radius: 4px; margin: 15px 0; display: block; box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+        .post-content code { background: #f1f3f4; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; color: #d63384; }
+        .post-content pre { background: #282c34; color: #abb2bf; padding: 15px; border-radius: 6px; overflow-x: auto; margin: 15px 0; }
+        .post-content pre code { background: none; color: inherit; padding: 0; }
+        .post-content blockquote { border-left: 3px solid #1a73e8; padding: 10px 15px; margin: 15px 0; background: #f0f6ff; color: #555; }
+        .post-content ul, .post-content ol { padding-left: 25px; margin-bottom: 15px; }
+        .post-content li { margin-bottom: 5px; }
+        .post-content table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        .post-content th, .post-content td { border: 1px solid #ddd; padding: 8px 12px; text-align: left; }
+        .post-content th { background: #f5f5f5; font-weight: 600; }
+        .post-content a { color: #1a73e8; text-decoration: none; }
+        .post-content a:hover { text-decoration: underline; }
+        footer { text-align: center; padding: 20px; color: #999; font-size: 0.85rem; margin-top: 30px; }
+        .back-link { display: inline-block; margin-bottom: 20px; color: #1a73e8; text-decoration: none; font-size: 0.95rem; }
+        .back-link:hover { text-decoration: underline; }
+        .img-cap { color: #888; font-size: 0.85rem; margin-top: -8px; }
+        @media (max-width: 600px) {
+            .post-content { padding: 20px 15px; }
+            header .container { flex-direction: column; gap: 10px; }
+            header nav a { margin-left: 10px; margin-right: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1><a href="../index.html">嘉驰科技Blog</a></h1>
+            <nav>
+                <a href="../index.html">首页</a>
+                <a href="../articles.html">文章</a>
+                <a href="../about.html">关于</a>
+                <a href="../contact.html">联系</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <a href="../articles.html" class="back-link">← 返回文章列表</a>
+        <article class="post-content">
+            <h1>萤石 C5T 筒机忘记密码恢复教程（CS-C5T-1B2WFR）</h1>
+            <div class="post-meta">
+                <span>📅 2026年9月2日</span>
+                <span class="tag">网络技术</span>
+            </div>
+            <hr>
+<p>本文以<strong>萤石 C5T 筒机（型号 CS-C5T-1B2WFR，海康威视同方案机型）</strong>为例，介绍忘记登录密码后的完整恢复流程：导出密文 → 邮箱获取导入文件 → 重置密码 → 用萤石客户端改 IP、恢复出厂 → 直接添加录像机。全程约 5~10 分钟，无需返厂。</p>
+<h2>步骤1：下载并运行《设备网络搜索》软件</h2>
+<p>《设备网络搜索》即海康威视 <strong>SADP</strong> 工具，用于发现局域网内的摄像机和录像机。在海康威视官网"服务支持 → 下载 → 工具软件"获取，或用随附的安装包。安装后打开，软件会自动扫描同网段设备（前提是摄像机已用网线接进同一路由器/交换机）。</p>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image1.png" alt="步骤1-运行设备网络搜索软件"></p>
+<p class="img-cap">📷 配图：设备网络搜索（SADP）主界面与设备列表</p>
+<h2>步骤2：勾选设备，导出密码重置密文</h2>
+<p>在设备列表中<strong>勾选需要重置密码的那台摄像机</strong>，点击右下角"<strong>忘记密码</strong>"。软件会根据设备类型自动生成一份加密的 <code>XML</code> 文件（里面是密钥密文，<strong>不含你的原密码</strong>），按提示保存到本地即可。</p>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image2.png" alt="步骤2-点击忘记密码导出XML"></p>
+<p class="img-cap">📷 配图：勾选设备 → 点击"忘记密码" → 导出 XML 密文</p>
+<h2>步骤3：将密文发送到客服邮箱，获取导入文件</h2>
+<p>把导出的 <code>XML</code> 文件发送到<strong>海康威视客服邮箱</strong>（或你拿货的代理商）。对方核对后会回复一封<strong>导入文件</strong>——该文件有时效、且绑定该设备序列号，请勿转发他人。</p>
+<p>国内一般走代理商或"<strong>海康互联</strong>"在线渠道，比官方邮箱往返更快，几分钟即可收到回件。</p>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image3.png" alt="步骤3-发送密文邮件"></p>
+<p class="img-cap">📷 配图：导出的 XML 邮件发送 / 收到的导入文件</p>
+<h2>步骤4：导入文件，重置新密码</h2>
+<p>回到软件，选择"<strong>文件导入</strong>"，设置新密码与确认密码，单击图标选择导入文件所在路径，点"<strong>确定</strong>"。重置成功会提示"成功"。</p>
+<p><strong>新密码规则（务必遵守）</strong>：</p>
+<ul>
+<li>长度 <strong>8–16 位</strong>；</li>
+<li>由<strong>数字、小写字母、大写字母、特殊字符中至少两种</strong>组合而成；</li>
+<li><strong>不能包含 "admin"</strong> 字样；</li>
+<li>建议采用高强度组合（四种都用），并每 3 个月更新一次，避免网络安全隐患。</li>
+</ul>
+<p>若不成功：关闭电脑杀毒软件，重启设备与软件，重新导出密文并重复本步骤。</p>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image4.png" alt="步骤4-导入文件重置密码"></p>
+<p class="img-cap">📷 配图：导入文件 → 设置新密码 → 点"确定"</p>
+<h2>步骤5：萤石客户端本地管理——改 IP 与恢复出厂</h2>
+<p>密码恢复后，打开<strong>萤石客户端</strong>，进入"<strong>本地设备管理</strong>"即可对该摄像机做两件事：</p>
+<ul>
+<li><strong>修改 IP</strong>：把摄像机改到你监控网段（如 192.168.0.x），方便录像机添加；</li>
+<li><strong>恢复出厂设置</strong>：清掉旧配置，回到初始状态，为重新接入做准备。</li>
+</ul>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image5.png" alt="步骤5-萤石客户端改IP恢复出厂"></p>
+<p class="img-cap">📷 配图：萤石客户端 → 本地设备管理 → 改 IP / 恢复出厂设置</p>
+<h2>步骤6：添加录像机（密码 = 摄像机验证码）</h2>
+<p>恢复出厂后，摄像机可以直接添加进录像机（NVR）。<strong>添加时填写的密码，就是摄像机机身上的"验证码"</strong>——即标签上二维码旁边那串字母数字，<strong>不是</strong>你刚设的登录密码。</p>
+<p>用验证码添加成功即完成整套恢复，摄像机恢复在线、正常录像。</p>
+<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image6.png" alt="步骤6-添加录像机用验证码"></p>
+<p class="img-cap">📷 配图：录像机添加摄像机 → 密码栏填机身"验证码"</p>
+<hr>
+<blockquote>
+<p><strong>温馨提示</strong></p>
+<ul>
+<li><strong>两个密码别混</strong>：机身"<strong>验证码</strong>"通常在标签二维码旁，恢复出厂后添加设备才用得到；刚设的"<strong>登录密码</strong>"只用于网页端/客户端登录，二者不是一回事。</li>
+<li>重置完建议把新登录密码记到加密记事本，避免再次遗忘。</li>
+<li>导入文件有时效且绑定该设备序列号，不要转发给他人，防止被冒用。</li>
+</ul>
+</blockquote>
+        </article>
+        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+    </div>
+</body>
+</html>
