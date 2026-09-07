@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html lang="zh-CN" data-page-node-id="ZvWVk7Ub8CDRNopcBSruSM">
+<head data-page-node-id="v6zcu9ZrvJnmjE9RdArw34">
+    <meta charset="UTF-8" data-page-node-id="WysbGquAUFUf4IYn7KwpJY">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="350HyzQv8JqmjWqPZPkdiM">
     <title>萤石 C5T 筒机忘记密码恢复教程（CS-C5T-1B2WFR） - 嘉驰科技Blog</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,77 +44,77 @@
         }
     </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <h1><a href="../index.html">嘉驰科技Blog</a></h1>
-            <nav>
-                <a href="../index.html">首页</a>
-                <a href="../articles.html">文章</a>
-                <a href="../about.html">关于</a>
-                <a href="../contact.html">联系</a>
+<body data-page-node-id="PbLkzbfAmMFHwTnNHkIiLD">
+    <header data-page-node-id="5EWzXZGuTD9AdvAYvuNwTF">
+        <div class="container" data-page-node-id="TjU7GoToD0dvaHtC2y7agu">
+            <h1 data-page-node-id="cEBJ1F3ZT9VuKYnYrrUSuI"><a href="../index.html" data-page-node-id="ZH2bnEu8tPq8VJJIorxUAv">嘉驰科技Blog</a></h1>
+            <nav data-page-node-id="edw8PI0LNSINvxGF9WI896">
+                <a href="../index.html" data-page-node-id="cO65VgcnqewtUmB9gQxtDx">首页</a>
+                <a href="../articles.html" data-page-node-id="DYF1i9Tll44NEG6UtM9JbM">文章</a>
+                <a href="../about.html" data-page-node-id="InmDDx7Q80rIQQBy0CYZpS">关于</a>
+                <a href="../contact.html" data-page-node-id="vkGTQrfnMZDp9qZG10Kg3O">联系</a>
             </nav>
         </div>
     </header>
-    <div class="container">
-        <a href="../articles.html" class="back-link">← 返回文章列表</a>
-        <article class="post-content">
-            <h1>萤石 C5T 筒机忘记密码恢复教程（CS-C5T-1B2WFR）</h1>
-            <div class="post-meta">
-                <span>📅 2026年9月2日</span>
-                <span class="tag">网络技术</span>
+    <div class="container" data-page-node-id="vSJMIjtuSvIIA6KAqAzWEC">
+        <a href="../articles.html" class="back-link" data-page-node-id="2ONwAeoq1X1CX4XbDiMUgZ">← 返回文章列表</a>
+        <article class="post-content" data-page-node-id="qVihVSHUVp4SzYh9graziX">
+            <h1 data-page-node-id="Bf75QHOOdx0v26yeZf8iHO">萤石 C5T 筒机忘记密码恢复教程（CS-C5T-1B2WFR）</h1>
+            <div class="post-meta" data-page-node-id="LSQZf4DM7t4kChNbTvL2vR">
+                <span data-page-node-id="QmDxBnazcbGRNDuqZLnM1h">📅 2026年9月2日</span>
+                <span class="tag" data-page-node-id="ZYBjfzyOwH6oNG4I3jXzp3">网络技术</span>
             </div>
-            <hr>
-<p>本文以<strong>萤石 C5T 筒机（型号 CS-C5T-1B2WFR，海康威视同方案机型）</strong>为例，介绍忘记登录密码后的完整恢复流程：导出密文 → 邮箱获取导入文件 → 重置密码 → 用萤石客户端改 IP、恢复出厂 → 直接添加录像机。全程约 5~10 分钟，无需返厂。</p>
-<h2>步骤1：下载并运行《设备网络搜索》软件</h2>
-<p>《设备网络搜索》即海康威视 <strong>SADP</strong> 工具，用于发现局域网内的摄像机和录像机。在海康威视官网"服务支持 → 下载 → 工具软件"获取，或用随附的安装包。安装后打开，软件会自动扫描同网段设备（前提是摄像机已用网线接进同一路由器/交换机）。</p>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image1.png" alt="步骤1-运行设备网络搜索软件"></p>
-<p class="img-cap">📷 配图：设备网络搜索（SADP）主界面与设备列表</p>
-<h2>步骤2：勾选设备，导出密码重置密文</h2>
-<p>在设备列表中<strong>勾选需要重置密码的那台摄像机</strong>，点击右下角"<strong>忘记密码</strong>"。软件会根据设备类型自动生成一份加密的 <code>XML</code> 文件（里面是密钥密文，<strong>不含你的原密码</strong>），按提示保存到本地即可。</p>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image2.png" alt="步骤2-点击忘记密码导出XML"></p>
-<p class="img-cap">📷 配图：勾选设备 → 点击"忘记密码" → 导出 XML 密文</p>
-<h2>步骤3：将密文发送到客服邮箱，获取导入文件</h2>
-<p>把导出的 <code>XML</code> 文件发送到<strong>海康威视客服邮箱</strong>（或你拿货的代理商）。对方核对后会回复一封<strong>导入文件</strong>——该文件有时效、且绑定该设备序列号，请勿转发他人。</p>
-<p>国内一般走代理商或"<strong>海康互联</strong>"在线渠道，比官方邮箱往返更快，几分钟即可收到回件。</p>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image3.png" alt="步骤3-发送密文邮件"></p>
-<p class="img-cap">📷 配图：导出的 XML 邮件发送 / 收到的导入文件</p>
-<h2>步骤4：导入文件，重置新密码</h2>
-<p>回到软件，选择"<strong>文件导入</strong>"，设置新密码与确认密码，单击图标选择导入文件所在路径，点"<strong>确定</strong>"。重置成功会提示"成功"。</p>
-<p><strong>新密码规则（务必遵守）</strong>：</p>
-<ul>
-<li>长度 <strong>8–16 位</strong>；</li>
-<li>由<strong>数字、小写字母、大写字母、特殊字符中至少两种</strong>组合而成；</li>
-<li><strong>不能包含 "admin"</strong> 字样；</li>
-<li>建议采用高强度组合（四种都用），并每 3 个月更新一次，避免网络安全隐患。</li>
+            <hr data-page-node-id="ODk1g77CgEItXmKzViIcYX">
+<p data-page-node-id="u2bh5SyP4DpJHs54yBhdJK">本文以<strong data-page-node-id="mFAyYTV4TMdnK2cDx8IsqA">萤石 C5T 筒机（型号 CS-C5T-1B2WFR，海康威视同方案机型）</strong>为例，介绍忘记登录密码后的完整恢复流程：导出密文 → 邮箱获取导入文件 → 重置密码 → 用萤石客户端改 IP、恢复出厂 → 直接添加录像机。全程约 5~10 分钟，无需返厂。</p>
+<h2 data-page-node-id="ttJOJLHd27yEN3qyFJVvvD">步骤1：下载并运行《设备网络搜索》软件</h2>
+<p data-page-node-id="X95e8AmClSU0XNGUcBz2Yn">《设备网络搜索》即海康威视 <strong data-page-node-id="k2C2Wnrq76dYYlX9E4syjA">SADP</strong> 工具，用于发现局域网内的摄像机和录像机。在海康威视官网"服务支持 → 下载 → 工具软件"获取，或用随附的安装包。安装后打开，软件会自动扫描同网段设备（前提是摄像机已用网线接进同一路由器/交换机）。</p>
+<p data-page-node-id="8V4uIhVeAPUgXJM6zQ2AD9"><img src="../images/萤石C5T筒机忘记密码恢复教程/image1.png" alt="步骤1-运行设备网络搜索软件" data-page-node-id="C2hWCBC7hErthVGGIOlNrH"></p>
+<p class="img-cap" data-page-node-id="JyD3ytjVMOc5p8KK8ajVxh">📷 配图：设备网络搜索（SADP）主界面与设备列表</p>
+<h2 data-page-node-id="KnWd3VFuPxoHi0r5a12nVI">步骤2：勾选设备，导出密码重置密文</h2>
+<p data-page-node-id="taoU9Mc0HOGdIF9dLVnWnn">在设备列表中<strong data-page-node-id="aFArWnz18gjHQQa8w6L9uH">勾选需要重置密码的那台摄像机</strong>，点击右下角"<strong data-page-node-id="UGU68NKBk4TDWO1fXQEEGO">忘记密码</strong>"。软件会根据设备类型自动生成一份加密的 <code data-page-node-id="aAgfsdBFVtxWQuE7SCgxMX">XML</code> 文件（里面是密钥密文，<strong data-page-node-id="TtLRIUNOgjBKflLCc9zAYb">不含你的原密码</strong>），按提示保存到本地即可。</p>
+<p data-page-node-id="CNl7C58ZhDFBwaHmneqBAu"><img src="../images/萤石C5T筒机忘记密码恢复教程/image2.png" alt="步骤2-点击忘记密码导出XML" data-page-node-id="MGW8chSo60jpMn6AUu9iPg"></p>
+<p class="img-cap" data-page-node-id="0Ad5jgLGBBfYiEJMwiNt5e">📷 配图：勾选设备 → 点击"忘记密码" → 导出 XML 密文</p>
+<h2 data-page-node-id="SVRhrG8wwFhIZH1Lxl2sq6">步骤3：将密文发送到客服邮箱，获取导入文件</h2>
+<p data-page-node-id="UIOgG3DVFeTXSZwsoEBK7N">把导出的 <code data-page-node-id="fmB37KkdvInou7WgZPAIPT">XML</code> 文件发送到<strong data-page-node-id="v857w2yRO9w6GelyyW2yrV">海康威视客服邮箱</strong>（或你拿货的代理商）。对方核对后会回复一封<strong data-page-node-id="FDJehR2AN0gC0HIjkecs7K">导入文件</strong>——该文件有时效、且绑定该设备序列号，请勿转发他人。</p>
+<p data-page-node-id="s4VSCgUlDJm1H4Ioo32i75">国内一般走代理商或"<strong data-page-node-id="PDzu1CMWtPP6lqJTwhgzpX">海康互联</strong>"在线渠道，比官方邮箱往返更快，几分钟即可收到回件。</p>
+<p data-page-node-id="0P3X0iVeJgFyk7aE1gWdhk"><img src="../images/萤石C5T筒机忘记密码恢复教程/image3.png" alt="步骤3-发送密文邮件" data-page-node-id="y2xJp09COqpC8yqhSOM7KN"></p>
+<p class="img-cap" data-page-node-id="ck4PPWCzYuGJNx0gj3V8LV">📷 配图：导出的 XML 邮件发送 / 收到的导入文件</p>
+<h2 data-page-node-id="YzDMnm8BxVNrdeExzAUcsa">步骤4：导入文件，重置新密码</h2>
+<p data-page-node-id="f7XgQeiPwLJV5uSXSbWFLE">回到软件，选择"<strong data-page-node-id="LEHV9HhrxdHpEsOk8bOKvQ">文件导入</strong>"，设置新密码与确认密码，单击图标选择导入文件所在路径，点"<strong data-page-node-id="xkNdJRMxasoBpPFAElo0HG">确定</strong>"。重置成功会提示"成功"。</p>
+<p data-page-node-id="9RMddyG5vzUbdzhFNIV524"><strong data-page-node-id="2QMgOl461ikC4Qcuq97uwO">新密码规则（务必遵守）</strong>：</p>
+<ul data-page-node-id="pxGP8R3GDYVIDIx1xA42pf">
+<li data-page-node-id="ny0eoNYP7jj7yuOmaRh6xc">长度 <strong data-page-node-id="FZZ0Q1JCE599uU7ew6Cp7x">8–16 位</strong>；</li>
+<li data-page-node-id="o62QA17oqZiO32WBTd4Fb9">由<strong data-page-node-id="9dSbby6TjDRCcmR2iHJMEi">数字、小写字母、大写字母、特殊字符中至少两种</strong>组合而成；</li>
+<li data-page-node-id="4i3QnLxpSXKYF4Eo94rEwx"><strong data-page-node-id="wCop64fulbjgCSTwMqXZqs">不能包含 "admin"</strong> 字样；</li>
+<li data-page-node-id="4BhZdDnCqAGFWgWIKG5Xz4">建议采用高强度组合（四种都用），并每 3 个月更新一次，避免网络安全隐患。</li>
 </ul>
-<p>若不成功：关闭电脑杀毒软件，重启设备与软件，重新导出密文并重复本步骤。</p>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image4.png" alt="步骤4-导入文件重置密码"></p>
-<p class="img-cap">📷 配图：导入文件 → 设置新密码 → 点"确定"</p>
-<h2>步骤5：萤石客户端本地管理——改 IP 与恢复出厂</h2>
-<p>密码恢复后，打开<strong>萤石客户端</strong>，进入"<strong>本地设备管理</strong>"即可对该摄像机做两件事：</p>
-<ul>
-<li><strong>修改 IP</strong>：把摄像机改到你监控网段（如 192.168.0.x），方便录像机添加；</li>
-<li><strong>恢复出厂设置</strong>：清掉旧配置，回到初始状态，为重新接入做准备。</li>
+<p data-page-node-id="gU5GwCTpqFLQfZrftNNwVT">若不成功：关闭电脑杀毒软件，重启设备与软件，重新导出密文并重复本步骤。</p>
+<p data-page-node-id="KBKuYd6KfE5ZYrmvG21vfC"><img src="../images/萤石C5T筒机忘记密码恢复教程/image4.png" alt="步骤4-导入文件重置密码" data-page-node-id="03v1cglMIX2YqwFSUG6WED"></p>
+<p class="img-cap" data-page-node-id="jJOm7G5DlFDZqtaDjUc73l">📷 配图：导入文件 → 设置新密码 → 点"确定"</p>
+<h2 data-page-node-id="axDOFsVOXdvX1xsbKgqbXD">步骤5：萤石客户端本地管理——改 IP 与恢复出厂</h2>
+<p data-page-node-id="AIUxzgzUkx7PY6udnSbN3Y">密码恢复后，打开<strong data-page-node-id="43if83YPQEKPM9cByzm7vO">萤石客户端</strong>，进入"<strong data-page-node-id="0YrpSyEudTfs9NAvPH0r8P">本地设备管理</strong>"即可对该摄像机做两件事：</p>
+<ul data-page-node-id="V7V4NHpSVVQ9W1c6qE5yS2">
+<li data-page-node-id="yUTTjdssxIeLQpKIuCa15o"><strong data-page-node-id="BSuW9yoaA9GjiSOi4PWFj4">修改 IP</strong>：把摄像机改到你监控网段（如 192.168.0.x），方便录像机添加；</li>
+<li data-page-node-id="dRrMmefRXUd7mdTIPChRV5"><strong data-page-node-id="VYg9i87XdZMB4bn2QZlk1i">恢复出厂设置</strong>：清掉旧配置，回到初始状态，为重新接入做准备。</li>
 </ul>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image5.png" alt="步骤5-萤石客户端改IP恢复出厂"></p>
-<p class="img-cap">📷 配图：萤石客户端 → 本地设备管理 → 改 IP / 恢复出厂设置</p>
-<h2>步骤6：添加录像机（密码 = 摄像机验证码）</h2>
-<p>恢复出厂后，摄像机可以直接添加进录像机（NVR）。<strong>添加时填写的密码，就是摄像机机身上的"验证码"</strong>——即标签上二维码旁边那串字母数字，<strong>不是</strong>你刚设的登录密码。</p>
-<p>用验证码添加成功即完成整套恢复，摄像机恢复在线、正常录像。</p>
-<p><img src="../images/萤石C5T筒机忘记密码恢复教程/image6.png" alt="步骤6-添加录像机用验证码"></p>
-<p class="img-cap">📷 配图：录像机添加摄像机 → 密码栏填机身"验证码"</p>
-<hr>
-<blockquote>
-<p><strong>温馨提示</strong></p>
-<ul>
-<li><strong>两个密码别混</strong>：机身"<strong>验证码</strong>"通常在标签二维码旁，恢复出厂后添加设备才用得到；刚设的"<strong>登录密码</strong>"只用于网页端/客户端登录，二者不是一回事。</li>
-<li>重置完建议把新登录密码记到加密记事本，避免再次遗忘。</li>
-<li>导入文件有时效且绑定该设备序列号，不要转发给他人，防止被冒用。</li>
+<p data-page-node-id="RVWKMIo4Fb0qiZrY2Vg23Y"><img src="../images/萤石C5T筒机忘记密码恢复教程/image5.png" alt="步骤5-萤石客户端改IP恢复出厂" data-page-node-id="e9SLSMqMKhqOnWHtHuJPTg"></p>
+<p class="img-cap" data-page-node-id="dWz9fznOGtMP2GQNQOy5GZ">📷 配图：萤石客户端 → 本地设备管理 → 改 IP / 恢复出厂设置</p>
+<h2 data-page-node-id="RIpYiFgY8llh8KcBkKpFGK">步骤6：添加录像机（密码 = 摄像机验证码）</h2>
+<p data-page-node-id="KWHDJVzXrFqdHCLzv3szTI">恢复出厂后，摄像机可以直接添加进录像机（NVR）。<strong data-page-node-id="xA25RiOB1EMDLBA6bpEwO0">添加时填写的密码，就是摄像机机身上的"验证码"</strong>——即标签上二维码旁边那串字母数字，<strong data-page-node-id="BJVqfGbCrfWi1ssZRhFMlM">不是</strong>你刚设的登录密码。</p>
+<p data-page-node-id="XNaoUNnDntJFf2EBRScobL">用验证码添加成功即完成整套恢复，摄像机恢复在线、正常录像。</p>
+<p data-page-node-id="NwoZDzoc7UBsTj64rCIywf"><img src="../images/萤石C5T筒机忘记密码恢复教程/image6.png" alt="步骤6-添加录像机用验证码" data-page-node-id="sjQkGhlGY2HDzIW7aLJxZX"></p>
+<p class="img-cap" data-page-node-id="vo7EDPvGP0eLbeelCtwDI1">📷 配图：录像机添加摄像机 → 密码栏填机身"验证码"</p>
+<hr data-page-node-id="k7CiG5sDldnKZo0QCLDG6r">
+<blockquote data-page-node-id="9B61uCWODUDHnTi5f5h5SH">
+<p data-page-node-id="2fWDBbu2t2oe4umVq40ZPH"><strong data-page-node-id="Il5zgY4svyMpuwYtfBIrR1">温馨提示</strong></p>
+<ul data-page-node-id="15VkHNRJ9JAtEmUHiC1Rbk">
+<li data-page-node-id="0hlRNBShypcB71Wf6u0XWa"><strong data-page-node-id="8CDwnPfHDolffb4LI29wlg">两个密码别混</strong>：机身"<strong data-page-node-id="BGu5QVpWRVuTP2u5KoQ8Ie">验证码</strong>"通常在标签二维码旁，恢复出厂后添加设备才用得到；刚设的"<strong data-page-node-id="efZeKqPUW47aXiXCipRPVb">登录密码</strong>"只用于网页端/客户端登录，二者不是一回事。</li>
+<li data-page-node-id="lD3DDixfnT13m5yBnygbLf">重置完建议把新登录密码记到加密记事本，避免再次遗忘。</li>
+<li data-page-node-id="oR0z5ET6Xgs0VZBKI62BLf">导入文件有时效且绑定该设备序列号，不要转发给他人，防止被冒用。</li>
 </ul>
 </blockquote>
         </article>
-        <footer>© 2025 嘉驰科技Blog. All rights reserved.</footer>
+        <footer data-page-node-id="rCSjEjMsGILheW79M2JPzl">© 2025 嘉驰科技Blog. All rights reserved.</footer>
     </div>
 </body>
 </html>
